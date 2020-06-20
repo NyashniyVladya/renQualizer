@@ -1,6 +1,6 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
-*.py[cod]
+*.py[co]
 *$py.class
 
 # C extensions
@@ -134,3 +134,4 @@ log.txt
 errors.txt
 traceback.txt
 game/Test audio/*
+game/_vl_cython_data/temp/*

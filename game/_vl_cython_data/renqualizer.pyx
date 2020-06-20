@@ -46,6 +46,9 @@ class BassDataHandler(object):
         self.__audio_module = renpy_audio_module
         self.__renpysound = renpy_audio_module.renpysound
 
+        self.__last_data = None
+        self.__last_time = None
+
         self._init()
 
     def draw_equalizer(
@@ -58,12 +61,20 @@ class BassDataHandler(object):
     ):
 
         """
-        Draws an equalizer in black and white.
-        (For easy subsequent repainting in the desired shades).
+        Draw equalizer.
         """
 
-        cdef int i
-        cdef unsigned char white[4], black[4], v
+        if (width < 1) or (height < 1):
+            raise self.__get_exception(
+                "drawing eq graph (incorrect size)",
+                _exc_type=ValueError
+            )
+
+        cdef:
+            int i
+            unsigned char v
+            unsigned char white[4]
+            unsigned char black[4]
         for i, v in enumerate(renpy.color.Color(line_color)):
             white[i] = v
         for i, v in enumerate(renpy.color.Color(back_color)):
@@ -74,20 +85,33 @@ class BassDataHandler(object):
         else:
             data = self.get_data(renpy_channel_or_data_tuple)
 
-        width = (int((float(width) / len(data))) * len(data)) # Align width.
-        py_surface = pygame_sdl2.Surface((width, height), pygame_sdl2.SRCALPHA)
+        _width = len(data)
+        _height = height
+        py_surface = pygame_sdl2.Surface(
+            (_width, _height),
+            pygame_sdl2.SRCALPHA
+        )
+        out_pysurface = pygame_sdl2.Surface(
+            (width, height),
+            pygame_sdl2.SRCALPHA
+        )
         cdef:
             SDL_Surface *c_surface = PySurface_AsSurface(py_surface)
             unsigned char *pixels = <unsigned char *> c_surface.pixels
 
+            SDL_Surface *out_csurface = PySurface_AsSurface(out_pysurface)
+            unsigned char *out_pixels = <unsigned char *> out_csurface.pixels
+
+
         cdef:
-            int elem_w = ((<int> ((<float> c_surface.w) / len(data))) or 1)
+            int elem_w = 1
             int elem_h = c_surface.h
 
         cdef:
             int _x, x, y, element_index, x_offset, draw_from_y
             float value
-            unsigned char *pixel_line, *current_color
+            unsigned char *pixel_line
+            unsigned char *current_color
         for element_index, value in enumerate(data):
             x_offset = elem_w * element_index
             draw_from_y = <int> (elem_h - ((<float> elem_h) * value))
@@ -103,7 +127,20 @@ class BassDataHandler(object):
                     pixel_line[(_x + 1)] = current_color[1]
                     pixel_line[(_x + 2)] = current_color[2]
                     pixel_line[(_x + 3)] = current_color[3]
-        return py_surface
+
+        cdef:
+            float y_index_multipler = ((<float> c_surface.h) / out_csurface.h)
+            float x_index_multipler = ((<float> c_surface.w) / out_csurface.w)
+            int get_y, get_x
+        for y from 0 <= y < out_csurface.h:
+            get_y = <int> (y * y_index_multipler)
+            pixel_line = (pixels + (c_surface.pitch * get_y))
+            for x from 0 <= x < out_csurface.w:
+                get_x = <int> (x * x_index_multipler)
+                for _x from 0 <= _x < 4:
+                    out_pixels[((x * 4) + _x)] = pixel_line[((get_x * 4) + _x)]
+            out_pixels += out_csurface.pitch
+        return out_pysurface
 
     @classmethod
     def __get_exception(cls, action=None, error_code=None, _exc_type=None):
@@ -190,6 +227,9 @@ class BassDataHandler(object):
 
             if self.__current_file != renpy_path:
 
+                self.__last_time = None
+                self.__last_data = None
+
                 if is_audiodata:
                     file_func = io.BytesIO
                     _arg = renpy_path.data
@@ -220,6 +260,9 @@ class BassDataHandler(object):
 
                 self.__current_file = renpy_path
 
+            if (self.__last_time == pos_in_ms) and self.__last_data:
+                return self.__last_data
+
             error_code = updateBufferFromPos(pos_in_ms)
             if error_code == (-2):
                 raise self.__get_exception(
@@ -236,7 +279,9 @@ class BassDataHandler(object):
                 # Another error.
                 raise self.__get_exception("updating buffer", error_code)
 
-            return tuple(self._get_octave_mapping(volume=volume))
+            self.__last_data = tuple(self._get_octave_mapping(volume=volume))
+            self.__last_time = pos_in_ms
+            return self.__last_data
 
     def _get_octave_mapping(self, volume=1., fill_zeros=False):
 

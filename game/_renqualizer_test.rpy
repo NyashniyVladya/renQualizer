@@ -25,19 +25,55 @@ init -10 python in _renqualizer_test:
             self.width = width
             self.height = height
 
-            self.__line_color = renpy.color.Color(line_color)
-            self.__back_color = renpy.color.Color(back_color)
+            self._colors = (line_color, back_color)
+            self.__last_data = None
+            self.__last_surf = None
+            self.__st = None
+
+        def __eq__(self, other):
+            if not self._equals(other):
+                return False
+            if self._channel != other._channel:
+                return False
+            if (self.width, self.height) != (other.width, other.height):
+                return False
+            if self._colors != other._colors:
+                return False
+            return True
+
+        def __ne__(self, other):
+            return (not self.__eq__(other))
+
+        @property
+        def _colors(self):
+            return (self.__line_color, self.__back_color)
+
+        @_colors.setter
+        def _colors(self, new_colors):
+            line_color, back_color = new_colors
+            line_color = renpy.color.Color(line_color)
+            back_color = renpy.color.Color(back_color)
+            self.__line_color, self.__back_color = line_color, back_color
+
+        @property
+        def data(self):
+            return self.__last_data
 
         def render(self, width, height, st, at):
-            surface = _bass_object.draw_equalizer(
-                self._channel,
-                (self.width or width),
-                (self.height or height),
-                self.__line_color,
-                self.__back_color
-            )
-            render_object = renpy.Render(*surface.get_size())
-            render_object.blit(surface, (0, 0))
+
+            if (not self.__last_data) or (self.__st != st):
+                self.__last_data = _bass_object.get_data(self._channel)
+                self.__last_surf = _bass_object.draw_equalizer(
+                    self.__last_data,
+                    (self.width or width),
+                    (self.height or height),
+                    self.__line_color,
+                    self.__back_color
+                )
+                self.__st = st
+
+            render_object = renpy.Render(*self.__last_surf.get_size())
+            render_object.blit(self.__last_surf, (0, 0))
             renpy.redraw(self, .0)
             return render_object
 

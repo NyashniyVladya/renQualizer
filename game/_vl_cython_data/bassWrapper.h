@@ -17,7 +17,7 @@ const int BUFFER_LEN_IN_SAMPLES = (BUFFER_LEN_FFT_ARRAY * 8);
 
 const DWORD FREQUENCY = 44100;
 const double A4_FREQ = 440.;  // International standard ISO16.
-const double MIN_DB_VALUE = (-72.);
+const double MIN_DB_VALUE = (-96.);
 
 const double FFT_ARRAY_STEP_IN_HZ = (
     (((double) FREQUENCY) / BUFFER_NUM_FFT_SAMPLES)

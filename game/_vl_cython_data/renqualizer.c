@@ -862,7 +862,7 @@ typedef uint64_t __pyx_t_11renqualizer_QWORD;
 /*--- Type declarations ---*/
 struct __pyx_obj_11renqualizer___pyx_scope_struct___get_octave_mapping;
 
-/* "renqualizer.pyx":286
+/* "renqualizer.pyx":290
  *             return self.__last_data
  * 
  *     def _get_octave_mapping(self, volume=1., fill_zeros=False):             # <<<<<<<<<<<<<<
@@ -1595,6 +1595,7 @@ static const char __pyx_k_BassDataHandler[] = "BassDataHandler";
 static const char __pyx_k_Error_code_is_0[] = " Error code is '{0}'.";
 static const char __pyx_k_renqualizer_pyx[] = "renqualizer.pyx";
 static const char __pyx_k_updating_buffer[] = "updating buffer";
+static const char __pyx_k_FIX_POS_OFFSET_MS[] = "FIX_POS_OFFSET_MS";
 static const char __pyx_k_allocating_memory[] = "allocating memory";
 static const char __pyx_k_freeing_resources[] = "freeing resources";
 static const char __pyx_k_x_index_multipler[] = "x_index_multipler";
@@ -1650,6 +1651,7 @@ static PyObject *__pyx_n_s_BytesIO;
 static PyObject *__pyx_n_s_Color;
 static PyObject *__pyx_kp_s_Error_code_is_0;
 static PyObject *__pyx_n_s_ExceptionType;
+static PyObject *__pyx_n_s_FIX_POS_OFFSET_MS;
 static PyObject *__pyx_n_s_ImportError;
 static PyObject *__pyx_n_s_MemoryError;
 static PyObject *__pyx_n_s_SRCALPHA;
@@ -1789,6 +1791,7 @@ static PyObject *__pyx_tp_new_11renqualizer___pyx_scope_struct___get_octave_mapp
 static PyObject *__pyx_float__0;
 static PyObject *__pyx_float_1_;
 static PyObject *__pyx_int_1;
+static PyObject *__pyx_int_neg_110;
 static PyObject *__pyx_tuple_;
 static PyObject *__pyx_tuple__6;
 static PyObject *__pyx_tuple__7;
@@ -1818,8 +1821,8 @@ static PyObject *__pyx_codeobj__27;
 static PyObject *__pyx_codeobj__29;
 /* Late includes */
 
-/* "renqualizer.pyx":37
- *     __author__ = "Vladya"
+/* "renqualizer.pyx":39
+ *     FIX_POS_OFFSET_MS = (-110)
  * 
  *     def __init__(self, renpy_audio_module):             # <<<<<<<<<<<<<<
  * 
@@ -1859,11 +1862,11 @@ static PyObject *__pyx_pw_11renqualizer_15BassDataHandler_1__init__(PyObject *__
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_renpy_audio_module)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, 1); __PYX_ERR(0, 37, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, 1); __PYX_ERR(0, 39, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__init__") < 0)) __PYX_ERR(0, 37, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__init__") < 0)) __PYX_ERR(0, 39, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -1876,7 +1879,7 @@ static PyObject *__pyx_pw_11renqualizer_15BassDataHandler_1__init__(PyObject *__
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 37, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 39, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("renqualizer.BassDataHandler.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -1897,62 +1900,62 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler___init__(CYTHON_UNUSED
   PyObject *__pyx_t_3 = NULL;
   __Pyx_RefNannySetupContext("__init__", 0);
 
-  /* "renqualizer.pyx":44
+  /* "renqualizer.pyx":46
  *         """
  * 
  *         self.__current_file = None             # <<<<<<<<<<<<<<
  * 
  *         self.__audio_module = renpy_audio_module
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__current_file, Py_None) < 0) __PYX_ERR(0, 44, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__current_file, Py_None) < 0) __PYX_ERR(0, 46, __pyx_L1_error)
 
-  /* "renqualizer.pyx":46
+  /* "renqualizer.pyx":48
  *         self.__current_file = None
  * 
  *         self.__audio_module = renpy_audio_module             # <<<<<<<<<<<<<<
  *         self.__renpysound = renpy_audio_module.renpysound
  * 
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__audio_module, __pyx_v_renpy_audio_module) < 0) __PYX_ERR(0, 46, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__audio_module, __pyx_v_renpy_audio_module) < 0) __PYX_ERR(0, 48, __pyx_L1_error)
 
-  /* "renqualizer.pyx":47
+  /* "renqualizer.pyx":49
  * 
  *         self.__audio_module = renpy_audio_module
  *         self.__renpysound = renpy_audio_module.renpysound             # <<<<<<<<<<<<<<
  * 
  *         self.__last_data = None
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_renpy_audio_module, __pyx_n_s_renpysound); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 47, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_renpy_audio_module, __pyx_n_s_renpysound); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 49, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__renpysound, __pyx_t_1) < 0) __PYX_ERR(0, 47, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__renpysound, __pyx_t_1) < 0) __PYX_ERR(0, 49, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "renqualizer.pyx":49
+  /* "renqualizer.pyx":51
  *         self.__renpysound = renpy_audio_module.renpysound
  * 
  *         self.__last_data = None             # <<<<<<<<<<<<<<
  *         self.__last_time = None
  * 
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__last_data, Py_None) < 0) __PYX_ERR(0, 49, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__last_data, Py_None) < 0) __PYX_ERR(0, 51, __pyx_L1_error)
 
-  /* "renqualizer.pyx":50
+  /* "renqualizer.pyx":52
  * 
  *         self.__last_data = None
  *         self.__last_time = None             # <<<<<<<<<<<<<<
  * 
  *         self._init()
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__last_time, Py_None) < 0) __PYX_ERR(0, 50, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__last_time, Py_None) < 0) __PYX_ERR(0, 52, __pyx_L1_error)
 
-  /* "renqualizer.pyx":52
+  /* "renqualizer.pyx":54
  *         self.__last_time = None
  * 
  *         self._init()             # <<<<<<<<<<<<<<
  * 
  *     def draw_equalizer(
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_init); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 52, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_init); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 54, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -1966,13 +1969,13 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler___init__(CYTHON_UNUSED
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 52, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 54, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "renqualizer.pyx":37
- *     __author__ = "Vladya"
+  /* "renqualizer.pyx":39
+ *     FIX_POS_OFFSET_MS = (-110)
  * 
  *     def __init__(self, renpy_audio_module):             # <<<<<<<<<<<<<<
  * 
@@ -1994,7 +1997,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler___init__(CYTHON_UNUSED
   return __pyx_r;
 }
 
-/* "renqualizer.pyx":54
+/* "renqualizer.pyx":56
  *         self._init()
  * 
  *     def draw_equalizer(             # <<<<<<<<<<<<<<
@@ -2049,19 +2052,19 @@ static PyObject *__pyx_pw_11renqualizer_15BassDataHandler_3draw_equalizer(PyObje
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_renpy_channel_or_data_tuple)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("draw_equalizer", 0, 4, 6, 1); __PYX_ERR(0, 54, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("draw_equalizer", 0, 4, 6, 1); __PYX_ERR(0, 56, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_width)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("draw_equalizer", 0, 4, 6, 2); __PYX_ERR(0, 54, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("draw_equalizer", 0, 4, 6, 2); __PYX_ERR(0, 56, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_height)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("draw_equalizer", 0, 4, 6, 3); __PYX_ERR(0, 54, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("draw_equalizer", 0, 4, 6, 3); __PYX_ERR(0, 56, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
@@ -2077,7 +2080,7 @@ static PyObject *__pyx_pw_11renqualizer_15BassDataHandler_3draw_equalizer(PyObje
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "draw_equalizer") < 0)) __PYX_ERR(0, 54, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "draw_equalizer") < 0)) __PYX_ERR(0, 56, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -2102,7 +2105,7 @@ static PyObject *__pyx_pw_11renqualizer_15BassDataHandler_3draw_equalizer(PyObje
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("draw_equalizer", 0, 4, 6, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 54, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("draw_equalizer", 0, 4, 6, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 56, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("renqualizer.BassDataHandler.draw_equalizer", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -2163,65 +2166,65 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
   int __pyx_t_15;
   __Pyx_RefNannySetupContext("draw_equalizer", 0);
 
-  /* "renqualizer.pyx":67
+  /* "renqualizer.pyx":69
  *         """
  * 
  *         if (width < 1) or (height < 1):             # <<<<<<<<<<<<<<
  *             raise self.__get_exception(
  *                 "drawing eq graph (incorrect size)",
  */
-  __pyx_t_2 = PyObject_RichCompare(__pyx_v_width, __pyx_int_1, Py_LT); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 67, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 67, __pyx_L1_error)
+  __pyx_t_2 = PyObject_RichCompare(__pyx_v_width, __pyx_int_1, Py_LT); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 69, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 69, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (!__pyx_t_3) {
   } else {
     __pyx_t_1 = __pyx_t_3;
     goto __pyx_L4_bool_binop_done;
   }
-  __pyx_t_2 = PyObject_RichCompare(__pyx_v_height, __pyx_int_1, Py_LT); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 67, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 67, __pyx_L1_error)
+  __pyx_t_2 = PyObject_RichCompare(__pyx_v_height, __pyx_int_1, Py_LT); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 69, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 69, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_1 = __pyx_t_3;
   __pyx_L4_bool_binop_done:;
   if (unlikely(__pyx_t_1)) {
 
-    /* "renqualizer.pyx":68
+    /* "renqualizer.pyx":70
  * 
  *         if (width < 1) or (height < 1):
  *             raise self.__get_exception(             # <<<<<<<<<<<<<<
  *                 "drawing eq graph (incorrect size)",
  *                 _exc_type=ValueError
  */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__get_exception); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 68, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__get_exception); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 70, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
 
-    /* "renqualizer.pyx":70
+    /* "renqualizer.pyx":72
  *             raise self.__get_exception(
  *                 "drawing eq graph (incorrect size)",
  *                 _exc_type=ValueError             # <<<<<<<<<<<<<<
  *             )
  * 
  */
-    __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 70, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 72, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_exc_type, __pyx_builtin_ValueError) < 0) __PYX_ERR(0, 70, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_exc_type, __pyx_builtin_ValueError) < 0) __PYX_ERR(0, 72, __pyx_L1_error)
 
-    /* "renqualizer.pyx":68
+    /* "renqualizer.pyx":70
  * 
  *         if (width < 1) or (height < 1):
  *             raise self.__get_exception(             # <<<<<<<<<<<<<<
  *                 "drawing eq graph (incorrect size)",
  *                 _exc_type=ValueError
  */
-    __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple_, __pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 68, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple_, __pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 70, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_Raise(__pyx_t_5, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __PYX_ERR(0, 68, __pyx_L1_error)
+    __PYX_ERR(0, 70, __pyx_L1_error)
 
-    /* "renqualizer.pyx":67
+    /* "renqualizer.pyx":69
  *         """
  * 
  *         if (width < 1) or (height < 1):             # <<<<<<<<<<<<<<
@@ -2230,7 +2233,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
  */
   }
 
-  /* "renqualizer.pyx":78
+  /* "renqualizer.pyx":80
  *             unsigned char white[4]
  *             unsigned char black[4]
  *         for i, v in enumerate(renpy.color.Color(line_color)):             # <<<<<<<<<<<<<<
@@ -2238,12 +2241,12 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
  *         for i, v in enumerate(renpy.color.Color(back_color)):
  */
   __pyx_t_6 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_renpy); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 78, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_renpy); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 80, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_color); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 78, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_color); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 80, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Color); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 78, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Color); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 80, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -2258,16 +2261,16 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
   }
   __pyx_t_5 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_2, __pyx_v_line_color) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_v_line_color);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 78, __pyx_L1_error)
+  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 80, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   if (likely(PyList_CheckExact(__pyx_t_5)) || PyTuple_CheckExact(__pyx_t_5)) {
     __pyx_t_4 = __pyx_t_5; __Pyx_INCREF(__pyx_t_4); __pyx_t_7 = 0;
     __pyx_t_8 = NULL;
   } else {
-    __pyx_t_7 = -1; __pyx_t_4 = PyObject_GetIter(__pyx_t_5); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 78, __pyx_L1_error)
+    __pyx_t_7 = -1; __pyx_t_4 = PyObject_GetIter(__pyx_t_5); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 80, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_8 = Py_TYPE(__pyx_t_4)->tp_iternext; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 78, __pyx_L1_error)
+    __pyx_t_8 = Py_TYPE(__pyx_t_4)->tp_iternext; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 80, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   for (;;) {
@@ -2275,17 +2278,17 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
       if (likely(PyList_CheckExact(__pyx_t_4))) {
         if (__pyx_t_7 >= PyList_GET_SIZE(__pyx_t_4)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_5 = PyList_GET_ITEM(__pyx_t_4, __pyx_t_7); __Pyx_INCREF(__pyx_t_5); __pyx_t_7++; if (unlikely(0 < 0)) __PYX_ERR(0, 78, __pyx_L1_error)
+        __pyx_t_5 = PyList_GET_ITEM(__pyx_t_4, __pyx_t_7); __Pyx_INCREF(__pyx_t_5); __pyx_t_7++; if (unlikely(0 < 0)) __PYX_ERR(0, 80, __pyx_L1_error)
         #else
-        __pyx_t_5 = PySequence_ITEM(__pyx_t_4, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 78, __pyx_L1_error)
+        __pyx_t_5 = PySequence_ITEM(__pyx_t_4, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 80, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         #endif
       } else {
         if (__pyx_t_7 >= PyTuple_GET_SIZE(__pyx_t_4)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_5 = PyTuple_GET_ITEM(__pyx_t_4, __pyx_t_7); __Pyx_INCREF(__pyx_t_5); __pyx_t_7++; if (unlikely(0 < 0)) __PYX_ERR(0, 78, __pyx_L1_error)
+        __pyx_t_5 = PyTuple_GET_ITEM(__pyx_t_4, __pyx_t_7); __Pyx_INCREF(__pyx_t_5); __pyx_t_7++; if (unlikely(0 < 0)) __PYX_ERR(0, 80, __pyx_L1_error)
         #else
-        __pyx_t_5 = PySequence_ITEM(__pyx_t_4, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 78, __pyx_L1_error)
+        __pyx_t_5 = PySequence_ITEM(__pyx_t_4, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 80, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         #endif
       }
@@ -2295,19 +2298,19 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 78, __pyx_L1_error)
+          else __PYX_ERR(0, 80, __pyx_L1_error)
         }
         break;
       }
       __Pyx_GOTREF(__pyx_t_5);
     }
-    __pyx_t_9 = __Pyx_PyInt_As_unsigned_char(__pyx_t_5); if (unlikely((__pyx_t_9 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 78, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyInt_As_unsigned_char(__pyx_t_5); if (unlikely((__pyx_t_9 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 80, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_v_v = __pyx_t_9;
     __pyx_v_i = __pyx_t_6;
     __pyx_t_6 = (__pyx_t_6 + 1);
 
-    /* "renqualizer.pyx":79
+    /* "renqualizer.pyx":81
  *             unsigned char black[4]
  *         for i, v in enumerate(renpy.color.Color(line_color)):
  *             white[i] = v             # <<<<<<<<<<<<<<
@@ -2316,7 +2319,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
  */
     (__pyx_v_white[__pyx_v_i]) = __pyx_v_v;
 
-    /* "renqualizer.pyx":78
+    /* "renqualizer.pyx":80
  *             unsigned char white[4]
  *             unsigned char black[4]
  *         for i, v in enumerate(renpy.color.Color(line_color)):             # <<<<<<<<<<<<<<
@@ -2326,7 +2329,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
   }
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "renqualizer.pyx":80
+  /* "renqualizer.pyx":82
  *         for i, v in enumerate(renpy.color.Color(line_color)):
  *             white[i] = v
  *         for i, v in enumerate(renpy.color.Color(back_color)):             # <<<<<<<<<<<<<<
@@ -2334,12 +2337,12 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
  * 
  */
   __pyx_t_6 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_renpy); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 80, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_renpy); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 82, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_color); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 80, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_color); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 82, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Color); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 80, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Color); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 82, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -2354,16 +2357,16 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
   }
   __pyx_t_4 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_2, __pyx_v_back_color) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_v_back_color);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 80, __pyx_L1_error)
+  if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 82, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   if (likely(PyList_CheckExact(__pyx_t_4)) || PyTuple_CheckExact(__pyx_t_4)) {
     __pyx_t_5 = __pyx_t_4; __Pyx_INCREF(__pyx_t_5); __pyx_t_7 = 0;
     __pyx_t_8 = NULL;
   } else {
-    __pyx_t_7 = -1; __pyx_t_5 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 80, __pyx_L1_error)
+    __pyx_t_7 = -1; __pyx_t_5 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 82, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_8 = Py_TYPE(__pyx_t_5)->tp_iternext; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 80, __pyx_L1_error)
+    __pyx_t_8 = Py_TYPE(__pyx_t_5)->tp_iternext; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 82, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   for (;;) {
@@ -2371,17 +2374,17 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
       if (likely(PyList_CheckExact(__pyx_t_5))) {
         if (__pyx_t_7 >= PyList_GET_SIZE(__pyx_t_5)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_4 = PyList_GET_ITEM(__pyx_t_5, __pyx_t_7); __Pyx_INCREF(__pyx_t_4); __pyx_t_7++; if (unlikely(0 < 0)) __PYX_ERR(0, 80, __pyx_L1_error)
+        __pyx_t_4 = PyList_GET_ITEM(__pyx_t_5, __pyx_t_7); __Pyx_INCREF(__pyx_t_4); __pyx_t_7++; if (unlikely(0 < 0)) __PYX_ERR(0, 82, __pyx_L1_error)
         #else
-        __pyx_t_4 = PySequence_ITEM(__pyx_t_5, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 80, __pyx_L1_error)
+        __pyx_t_4 = PySequence_ITEM(__pyx_t_5, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 82, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
         #endif
       } else {
         if (__pyx_t_7 >= PyTuple_GET_SIZE(__pyx_t_5)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_4 = PyTuple_GET_ITEM(__pyx_t_5, __pyx_t_7); __Pyx_INCREF(__pyx_t_4); __pyx_t_7++; if (unlikely(0 < 0)) __PYX_ERR(0, 80, __pyx_L1_error)
+        __pyx_t_4 = PyTuple_GET_ITEM(__pyx_t_5, __pyx_t_7); __Pyx_INCREF(__pyx_t_4); __pyx_t_7++; if (unlikely(0 < 0)) __PYX_ERR(0, 82, __pyx_L1_error)
         #else
-        __pyx_t_4 = PySequence_ITEM(__pyx_t_5, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 80, __pyx_L1_error)
+        __pyx_t_4 = PySequence_ITEM(__pyx_t_5, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 82, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
         #endif
       }
@@ -2391,19 +2394,19 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 80, __pyx_L1_error)
+          else __PYX_ERR(0, 82, __pyx_L1_error)
         }
         break;
       }
       __Pyx_GOTREF(__pyx_t_4);
     }
-    __pyx_t_9 = __Pyx_PyInt_As_unsigned_char(__pyx_t_4); if (unlikely((__pyx_t_9 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 80, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyInt_As_unsigned_char(__pyx_t_4); if (unlikely((__pyx_t_9 == (unsigned char)-1) && PyErr_Occurred())) __PYX_ERR(0, 82, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __pyx_v_v = __pyx_t_9;
     __pyx_v_i = __pyx_t_6;
     __pyx_t_6 = (__pyx_t_6 + 1);
 
-    /* "renqualizer.pyx":81
+    /* "renqualizer.pyx":83
  *             white[i] = v
  *         for i, v in enumerate(renpy.color.Color(back_color)):
  *             black[i] = v             # <<<<<<<<<<<<<<
@@ -2412,7 +2415,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
  */
     (__pyx_v_black[__pyx_v_i]) = __pyx_v_v;
 
-    /* "renqualizer.pyx":80
+    /* "renqualizer.pyx":82
  *         for i, v in enumerate(renpy.color.Color(line_color)):
  *             white[i] = v
  *         for i, v in enumerate(renpy.color.Color(back_color)):             # <<<<<<<<<<<<<<
@@ -2422,7 +2425,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
   }
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "renqualizer.pyx":83
+  /* "renqualizer.pyx":85
  *             black[i] = v
  * 
  *         if isinstance(renpy_channel_or_data_tuple, tuple):             # <<<<<<<<<<<<<<
@@ -2433,7 +2436,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
   __pyx_t_3 = (__pyx_t_1 != 0);
   if (__pyx_t_3) {
 
-    /* "renqualizer.pyx":84
+    /* "renqualizer.pyx":86
  * 
  *         if isinstance(renpy_channel_or_data_tuple, tuple):
  *             data = renpy_channel_or_data_tuple             # <<<<<<<<<<<<<<
@@ -2443,7 +2446,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
     __Pyx_INCREF(__pyx_v_renpy_channel_or_data_tuple);
     __pyx_v_data = __pyx_v_renpy_channel_or_data_tuple;
 
-    /* "renqualizer.pyx":83
+    /* "renqualizer.pyx":85
  *             black[i] = v
  * 
  *         if isinstance(renpy_channel_or_data_tuple, tuple):             # <<<<<<<<<<<<<<
@@ -2453,7 +2456,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
     goto __pyx_L10;
   }
 
-  /* "renqualizer.pyx":86
+  /* "renqualizer.pyx":88
  *             data = renpy_channel_or_data_tuple
  *         else:
  *             data = self.get_data(renpy_channel_or_data_tuple)             # <<<<<<<<<<<<<<
@@ -2461,7 +2464,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
  *         _width = len(data)
  */
   /*else*/ {
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_get_data); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 86, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_get_data); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 88, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_2 = NULL;
     if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_4))) {
@@ -2475,7 +2478,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
     }
     __pyx_t_5 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_2, __pyx_v_renpy_channel_or_data_tuple) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_v_renpy_channel_or_data_tuple);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 86, __pyx_L1_error)
+    if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 88, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __pyx_v_data = __pyx_t_5;
@@ -2483,17 +2486,17 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
   }
   __pyx_L10:;
 
-  /* "renqualizer.pyx":88
+  /* "renqualizer.pyx":90
  *             data = self.get_data(renpy_channel_or_data_tuple)
  * 
  *         _width = len(data)             # <<<<<<<<<<<<<<
  *         _height = height
  *         py_surface = pygame_sdl2.Surface(
  */
-  __pyx_t_7 = PyObject_Length(__pyx_v_data); if (unlikely(__pyx_t_7 == ((Py_ssize_t)-1))) __PYX_ERR(0, 88, __pyx_L1_error)
+  __pyx_t_7 = PyObject_Length(__pyx_v_data); if (unlikely(__pyx_t_7 == ((Py_ssize_t)-1))) __PYX_ERR(0, 90, __pyx_L1_error)
   __pyx_v__width = __pyx_t_7;
 
-  /* "renqualizer.pyx":89
+  /* "renqualizer.pyx":91
  * 
  *         _width = len(data)
  *         _height = height             # <<<<<<<<<<<<<<
@@ -2503,29 +2506,29 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
   __Pyx_INCREF(__pyx_v_height);
   __pyx_v__height = __pyx_v_height;
 
-  /* "renqualizer.pyx":90
+  /* "renqualizer.pyx":92
  *         _width = len(data)
  *         _height = height
  *         py_surface = pygame_sdl2.Surface(             # <<<<<<<<<<<<<<
  *             (_width, _height),
  *             pygame_sdl2.SRCALPHA
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_pygame_sdl2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 90, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_pygame_sdl2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 92, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_Surface); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 90, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_Surface); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 92, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "renqualizer.pyx":91
+  /* "renqualizer.pyx":93
  *         _height = height
  *         py_surface = pygame_sdl2.Surface(
  *             (_width, _height),             # <<<<<<<<<<<<<<
  *             pygame_sdl2.SRCALPHA
  *         )
  */
-  __pyx_t_4 = PyInt_FromSsize_t(__pyx_v__width); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 91, __pyx_L1_error)
+  __pyx_t_4 = PyInt_FromSsize_t(__pyx_v__width); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 93, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_10 = PyTuple_New(2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 91, __pyx_L1_error)
+  __pyx_t_10 = PyTuple_New(2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 93, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_10);
   __Pyx_GIVEREF(__pyx_t_4);
   PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_t_4);
@@ -2534,16 +2537,16 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
   PyTuple_SET_ITEM(__pyx_t_10, 1, __pyx_v__height);
   __pyx_t_4 = 0;
 
-  /* "renqualizer.pyx":92
+  /* "renqualizer.pyx":94
  *         py_surface = pygame_sdl2.Surface(
  *             (_width, _height),
  *             pygame_sdl2.SRCALPHA             # <<<<<<<<<<<<<<
  *         )
  *         out_pysurface = pygame_sdl2.Surface(
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_pygame_sdl2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 92, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_pygame_sdl2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 94, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_SRCALPHA); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 92, __pyx_L1_error)
+  __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_SRCALPHA); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 94, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_t_4 = NULL;
@@ -2561,7 +2564,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_2)) {
     PyObject *__pyx_temp[3] = {__pyx_t_4, __pyx_t_10, __pyx_t_11};
-    __pyx_t_5 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 90, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 92, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
@@ -2571,7 +2574,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
     PyObject *__pyx_temp[3] = {__pyx_t_4, __pyx_t_10, __pyx_t_11};
-    __pyx_t_5 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 90, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 92, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
@@ -2579,7 +2582,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
   } else
   #endif
   {
-    __pyx_t_12 = PyTuple_New(2+__pyx_t_6); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 90, __pyx_L1_error)
+    __pyx_t_12 = PyTuple_New(2+__pyx_t_6); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 92, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_12);
     if (__pyx_t_4) {
       __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_4); __pyx_t_4 = NULL;
@@ -2590,7 +2593,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
     PyTuple_SET_ITEM(__pyx_t_12, 1+__pyx_t_6, __pyx_t_11);
     __pyx_t_10 = 0;
     __pyx_t_11 = 0;
-    __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_12, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 90, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_12, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 92, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
   }
@@ -2598,27 +2601,27 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
   __pyx_v_py_surface = __pyx_t_5;
   __pyx_t_5 = 0;
 
-  /* "renqualizer.pyx":94
+  /* "renqualizer.pyx":96
  *             pygame_sdl2.SRCALPHA
  *         )
  *         out_pysurface = pygame_sdl2.Surface(             # <<<<<<<<<<<<<<
  *             (width, height),
  *             pygame_sdl2.SRCALPHA
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame_sdl2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 94, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pygame_sdl2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 96, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Surface); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 94, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Surface); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 96, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "renqualizer.pyx":95
+  /* "renqualizer.pyx":97
  *         )
  *         out_pysurface = pygame_sdl2.Surface(
  *             (width, height),             # <<<<<<<<<<<<<<
  *             pygame_sdl2.SRCALPHA
  *         )
  */
-  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 95, __pyx_L1_error)
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 97, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(__pyx_v_width);
   __Pyx_GIVEREF(__pyx_v_width);
@@ -2627,16 +2630,16 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
   __Pyx_GIVEREF(__pyx_v_height);
   PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_v_height);
 
-  /* "renqualizer.pyx":96
+  /* "renqualizer.pyx":98
  *         out_pysurface = pygame_sdl2.Surface(
  *             (width, height),
  *             pygame_sdl2.SRCALPHA             # <<<<<<<<<<<<<<
  *         )
  *         cdef:
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_n_s_pygame_sdl2); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 96, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_n_s_pygame_sdl2); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 98, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
-  __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_SRCALPHA); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 96, __pyx_L1_error)
+  __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_SRCALPHA); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 98, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_10);
   __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
   __pyx_t_11 = NULL;
@@ -2654,7 +2657,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_12)) {
     PyObject *__pyx_temp[3] = {__pyx_t_11, __pyx_t_2, __pyx_t_10};
-    __pyx_t_5 = __Pyx_PyFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 94, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 96, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -2664,7 +2667,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_12)) {
     PyObject *__pyx_temp[3] = {__pyx_t_11, __pyx_t_2, __pyx_t_10};
-    __pyx_t_5 = __Pyx_PyCFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 94, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyCFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 96, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -2672,7 +2675,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
   } else
   #endif
   {
-    __pyx_t_4 = PyTuple_New(2+__pyx_t_6); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 94, __pyx_L1_error)
+    __pyx_t_4 = PyTuple_New(2+__pyx_t_6); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 96, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     if (__pyx_t_11) {
       __Pyx_GIVEREF(__pyx_t_11); PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_11); __pyx_t_11 = NULL;
@@ -2683,7 +2686,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
     PyTuple_SET_ITEM(__pyx_t_4, 1+__pyx_t_6, __pyx_t_10);
     __pyx_t_2 = 0;
     __pyx_t_10 = 0;
-    __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_12, __pyx_t_4, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 94, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_12, __pyx_t_4, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 96, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
@@ -2691,7 +2694,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
   __pyx_v_out_pysurface = __pyx_t_5;
   __pyx_t_5 = 0;
 
-  /* "renqualizer.pyx":99
+  /* "renqualizer.pyx":101
  *         )
  *         cdef:
  *             SDL_Surface *c_surface = PySurface_AsSurface(py_surface)             # <<<<<<<<<<<<<<
@@ -2700,7 +2703,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
  */
   __pyx_v_c_surface = PySurface_AsSurface(__pyx_v_py_surface);
 
-  /* "renqualizer.pyx":100
+  /* "renqualizer.pyx":102
  *         cdef:
  *             SDL_Surface *c_surface = PySurface_AsSurface(py_surface)
  *             unsigned char *pixels = <unsigned char *> c_surface.pixels             # <<<<<<<<<<<<<<
@@ -2709,7 +2712,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
  */
   __pyx_v_pixels = ((unsigned char *)__pyx_v_c_surface->pixels);
 
-  /* "renqualizer.pyx":102
+  /* "renqualizer.pyx":104
  *             unsigned char *pixels = <unsigned char *> c_surface.pixels
  * 
  *             SDL_Surface *out_csurface = PySurface_AsSurface(out_pysurface)             # <<<<<<<<<<<<<<
@@ -2718,7 +2721,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
  */
   __pyx_v_out_csurface = PySurface_AsSurface(__pyx_v_out_pysurface);
 
-  /* "renqualizer.pyx":103
+  /* "renqualizer.pyx":105
  * 
  *             SDL_Surface *out_csurface = PySurface_AsSurface(out_pysurface)
  *             unsigned char *out_pixels = <unsigned char *> out_csurface.pixels             # <<<<<<<<<<<<<<
@@ -2727,7 +2730,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
  */
   __pyx_v_out_pixels = ((unsigned char *)__pyx_v_out_csurface->pixels);
 
-  /* "renqualizer.pyx":107
+  /* "renqualizer.pyx":109
  * 
  *         cdef:
  *             int elem_w = 1             # <<<<<<<<<<<<<<
@@ -2736,7 +2739,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
  */
   __pyx_v_elem_w = 1;
 
-  /* "renqualizer.pyx":108
+  /* "renqualizer.pyx":110
  *         cdef:
  *             int elem_w = 1
  *             int elem_h = c_surface.h             # <<<<<<<<<<<<<<
@@ -2746,7 +2749,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
   __pyx_t_6 = __pyx_v_c_surface->h;
   __pyx_v_elem_h = __pyx_t_6;
 
-  /* "renqualizer.pyx":115
+  /* "renqualizer.pyx":117
  *             unsigned char *pixel_line
  *             unsigned char *current_color
  *         for element_index, value in enumerate(data):             # <<<<<<<<<<<<<<
@@ -2758,26 +2761,26 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
     __pyx_t_5 = __pyx_v_data; __Pyx_INCREF(__pyx_t_5); __pyx_t_7 = 0;
     __pyx_t_8 = NULL;
   } else {
-    __pyx_t_7 = -1; __pyx_t_5 = PyObject_GetIter(__pyx_v_data); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 115, __pyx_L1_error)
+    __pyx_t_7 = -1; __pyx_t_5 = PyObject_GetIter(__pyx_v_data); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 117, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_8 = Py_TYPE(__pyx_t_5)->tp_iternext; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 115, __pyx_L1_error)
+    __pyx_t_8 = Py_TYPE(__pyx_t_5)->tp_iternext; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 117, __pyx_L1_error)
   }
   for (;;) {
     if (likely(!__pyx_t_8)) {
       if (likely(PyList_CheckExact(__pyx_t_5))) {
         if (__pyx_t_7 >= PyList_GET_SIZE(__pyx_t_5)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_12 = PyList_GET_ITEM(__pyx_t_5, __pyx_t_7); __Pyx_INCREF(__pyx_t_12); __pyx_t_7++; if (unlikely(0 < 0)) __PYX_ERR(0, 115, __pyx_L1_error)
+        __pyx_t_12 = PyList_GET_ITEM(__pyx_t_5, __pyx_t_7); __Pyx_INCREF(__pyx_t_12); __pyx_t_7++; if (unlikely(0 < 0)) __PYX_ERR(0, 117, __pyx_L1_error)
         #else
-        __pyx_t_12 = PySequence_ITEM(__pyx_t_5, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 115, __pyx_L1_error)
+        __pyx_t_12 = PySequence_ITEM(__pyx_t_5, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 117, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_12);
         #endif
       } else {
         if (__pyx_t_7 >= PyTuple_GET_SIZE(__pyx_t_5)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_12 = PyTuple_GET_ITEM(__pyx_t_5, __pyx_t_7); __Pyx_INCREF(__pyx_t_12); __pyx_t_7++; if (unlikely(0 < 0)) __PYX_ERR(0, 115, __pyx_L1_error)
+        __pyx_t_12 = PyTuple_GET_ITEM(__pyx_t_5, __pyx_t_7); __Pyx_INCREF(__pyx_t_12); __pyx_t_7++; if (unlikely(0 < 0)) __PYX_ERR(0, 117, __pyx_L1_error)
         #else
-        __pyx_t_12 = PySequence_ITEM(__pyx_t_5, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 115, __pyx_L1_error)
+        __pyx_t_12 = PySequence_ITEM(__pyx_t_5, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 117, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_12);
         #endif
       }
@@ -2787,19 +2790,19 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 115, __pyx_L1_error)
+          else __PYX_ERR(0, 117, __pyx_L1_error)
         }
         break;
       }
       __Pyx_GOTREF(__pyx_t_12);
     }
-    __pyx_t_13 = __pyx_PyFloat_AsFloat(__pyx_t_12); if (unlikely((__pyx_t_13 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 115, __pyx_L1_error)
+    __pyx_t_13 = __pyx_PyFloat_AsFloat(__pyx_t_12); if (unlikely((__pyx_t_13 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 117, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
     __pyx_v_value = __pyx_t_13;
     __pyx_v_element_index = __pyx_t_6;
     __pyx_t_6 = (__pyx_t_6 + 1);
 
-    /* "renqualizer.pyx":116
+    /* "renqualizer.pyx":118
  *             unsigned char *current_color
  *         for element_index, value in enumerate(data):
  *             x_offset = elem_w * element_index             # <<<<<<<<<<<<<<
@@ -2808,7 +2811,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
  */
     __pyx_v_x_offset = (__pyx_v_elem_w * __pyx_v_element_index);
 
-    /* "renqualizer.pyx":117
+    /* "renqualizer.pyx":119
  *         for element_index, value in enumerate(data):
  *             x_offset = elem_w * element_index
  *             draw_from_y = <int> (elem_h - ((<float> elem_h) * value))             # <<<<<<<<<<<<<<
@@ -2817,7 +2820,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
  */
     __pyx_v_draw_from_y = ((int)(__pyx_v_elem_h - (((float)__pyx_v_elem_h) * __pyx_v_value)));
 
-    /* "renqualizer.pyx":118
+    /* "renqualizer.pyx":120
  *             x_offset = elem_w * element_index
  *             draw_from_y = <int> (elem_h - ((<float> elem_h) * value))
  *             for y from 0 <= y < elem_h:             # <<<<<<<<<<<<<<
@@ -2827,7 +2830,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
     __pyx_t_14 = __pyx_v_elem_h;
     for (__pyx_v_y = 0; __pyx_v_y < __pyx_t_14; __pyx_v_y++) {
 
-      /* "renqualizer.pyx":119
+      /* "renqualizer.pyx":121
  *             draw_from_y = <int> (elem_h - ((<float> elem_h) * value))
  *             for y from 0 <= y < elem_h:
  *                 pixel_line = (pixels + (c_surface.pitch * y))             # <<<<<<<<<<<<<<
@@ -2836,7 +2839,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
  */
       __pyx_v_pixel_line = (__pyx_v_pixels + (__pyx_v_c_surface->pitch * __pyx_v_y));
 
-      /* "renqualizer.pyx":120
+      /* "renqualizer.pyx":122
  *             for y from 0 <= y < elem_h:
  *                 pixel_line = (pixels + (c_surface.pitch * y))
  *                 if y >= draw_from_y:             # <<<<<<<<<<<<<<
@@ -2846,7 +2849,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
       __pyx_t_3 = ((__pyx_v_y >= __pyx_v_draw_from_y) != 0);
       if (__pyx_t_3) {
 
-        /* "renqualizer.pyx":121
+        /* "renqualizer.pyx":123
  *                 pixel_line = (pixels + (c_surface.pitch * y))
  *                 if y >= draw_from_y:
  *                     current_color = white             # <<<<<<<<<<<<<<
@@ -2855,7 +2858,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
  */
         __pyx_v_current_color = __pyx_v_white;
 
-        /* "renqualizer.pyx":120
+        /* "renqualizer.pyx":122
  *             for y from 0 <= y < elem_h:
  *                 pixel_line = (pixels + (c_surface.pitch * y))
  *                 if y >= draw_from_y:             # <<<<<<<<<<<<<<
@@ -2865,7 +2868,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
         goto __pyx_L15;
       }
 
-      /* "renqualizer.pyx":123
+      /* "renqualizer.pyx":125
  *                     current_color = white
  *                 else:
  *                     current_color = black             # <<<<<<<<<<<<<<
@@ -2877,7 +2880,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
       }
       __pyx_L15:;
 
-      /* "renqualizer.pyx":124
+      /* "renqualizer.pyx":126
  *                 else:
  *                     current_color = black
  *                 for x from 0 <= x < elem_w:             # <<<<<<<<<<<<<<
@@ -2887,7 +2890,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
       __pyx_t_15 = __pyx_v_elem_w;
       for (__pyx_v_x = 0; __pyx_v_x < __pyx_t_15; __pyx_v_x++) {
 
-        /* "renqualizer.pyx":125
+        /* "renqualizer.pyx":127
  *                     current_color = black
  *                 for x from 0 <= x < elem_w:
  *                     _x = (x + x_offset) * 4             # <<<<<<<<<<<<<<
@@ -2896,7 +2899,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
  */
         __pyx_v__x = ((__pyx_v_x + __pyx_v_x_offset) * 4);
 
-        /* "renqualizer.pyx":126
+        /* "renqualizer.pyx":128
  *                 for x from 0 <= x < elem_w:
  *                     _x = (x + x_offset) * 4
  *                     pixel_line[(_x + 0)] = current_color[0]             # <<<<<<<<<<<<<<
@@ -2905,7 +2908,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
  */
         (__pyx_v_pixel_line[(__pyx_v__x + 0)]) = (__pyx_v_current_color[0]);
 
-        /* "renqualizer.pyx":127
+        /* "renqualizer.pyx":129
  *                     _x = (x + x_offset) * 4
  *                     pixel_line[(_x + 0)] = current_color[0]
  *                     pixel_line[(_x + 1)] = current_color[1]             # <<<<<<<<<<<<<<
@@ -2914,7 +2917,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
  */
         (__pyx_v_pixel_line[(__pyx_v__x + 1)]) = (__pyx_v_current_color[1]);
 
-        /* "renqualizer.pyx":128
+        /* "renqualizer.pyx":130
  *                     pixel_line[(_x + 0)] = current_color[0]
  *                     pixel_line[(_x + 1)] = current_color[1]
  *                     pixel_line[(_x + 2)] = current_color[2]             # <<<<<<<<<<<<<<
@@ -2923,7 +2926,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
  */
         (__pyx_v_pixel_line[(__pyx_v__x + 2)]) = (__pyx_v_current_color[2]);
 
-        /* "renqualizer.pyx":129
+        /* "renqualizer.pyx":131
  *                     pixel_line[(_x + 1)] = current_color[1]
  *                     pixel_line[(_x + 2)] = current_color[2]
  *                     pixel_line[(_x + 3)] = current_color[3]             # <<<<<<<<<<<<<<
@@ -2934,7 +2937,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
       }
     }
 
-    /* "renqualizer.pyx":115
+    /* "renqualizer.pyx":117
  *             unsigned char *pixel_line
  *             unsigned char *current_color
  *         for element_index, value in enumerate(data):             # <<<<<<<<<<<<<<
@@ -2944,7 +2947,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
   }
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "renqualizer.pyx":132
+  /* "renqualizer.pyx":134
  * 
  *         cdef:
  *             float y_index_multipler = ((<float> c_surface.h) / out_csurface.h)             # <<<<<<<<<<<<<<
@@ -2953,11 +2956,11 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
  */
   if (unlikely(__pyx_v_out_csurface->h == 0)) {
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-    __PYX_ERR(0, 132, __pyx_L1_error)
+    __PYX_ERR(0, 134, __pyx_L1_error)
   }
   __pyx_v_y_index_multipler = (((float)__pyx_v_c_surface->h) / __pyx_v_out_csurface->h);
 
-  /* "renqualizer.pyx":133
+  /* "renqualizer.pyx":135
  *         cdef:
  *             float y_index_multipler = ((<float> c_surface.h) / out_csurface.h)
  *             float x_index_multipler = ((<float> c_surface.w) / out_csurface.w)             # <<<<<<<<<<<<<<
@@ -2966,11 +2969,11 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
  */
   if (unlikely(__pyx_v_out_csurface->w == 0)) {
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-    __PYX_ERR(0, 133, __pyx_L1_error)
+    __PYX_ERR(0, 135, __pyx_L1_error)
   }
   __pyx_v_x_index_multipler = (((float)__pyx_v_c_surface->w) / __pyx_v_out_csurface->w);
 
-  /* "renqualizer.pyx":135
+  /* "renqualizer.pyx":137
  *             float x_index_multipler = ((<float> c_surface.w) / out_csurface.w)
  *             int get_y, get_x
  *         for y from 0 <= y < out_csurface.h:             # <<<<<<<<<<<<<<
@@ -2980,7 +2983,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
   __pyx_t_6 = __pyx_v_out_csurface->h;
   for (__pyx_v_y = 0; __pyx_v_y < __pyx_t_6; __pyx_v_y++) {
 
-    /* "renqualizer.pyx":136
+    /* "renqualizer.pyx":138
  *             int get_y, get_x
  *         for y from 0 <= y < out_csurface.h:
  *             get_y = <int> (y * y_index_multipler)             # <<<<<<<<<<<<<<
@@ -2989,7 +2992,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
  */
     __pyx_v_get_y = ((int)(__pyx_v_y * __pyx_v_y_index_multipler));
 
-    /* "renqualizer.pyx":137
+    /* "renqualizer.pyx":139
  *         for y from 0 <= y < out_csurface.h:
  *             get_y = <int> (y * y_index_multipler)
  *             pixel_line = (pixels + (c_surface.pitch * get_y))             # <<<<<<<<<<<<<<
@@ -2998,7 +3001,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
  */
     __pyx_v_pixel_line = (__pyx_v_pixels + (__pyx_v_c_surface->pitch * __pyx_v_get_y));
 
-    /* "renqualizer.pyx":138
+    /* "renqualizer.pyx":140
  *             get_y = <int> (y * y_index_multipler)
  *             pixel_line = (pixels + (c_surface.pitch * get_y))
  *             for x from 0 <= x < out_csurface.w:             # <<<<<<<<<<<<<<
@@ -3008,7 +3011,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
     __pyx_t_14 = __pyx_v_out_csurface->w;
     for (__pyx_v_x = 0; __pyx_v_x < __pyx_t_14; __pyx_v_x++) {
 
-      /* "renqualizer.pyx":139
+      /* "renqualizer.pyx":141
  *             pixel_line = (pixels + (c_surface.pitch * get_y))
  *             for x from 0 <= x < out_csurface.w:
  *                 get_x = <int> (x * x_index_multipler)             # <<<<<<<<<<<<<<
@@ -3017,7 +3020,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
  */
       __pyx_v_get_x = ((int)(__pyx_v_x * __pyx_v_x_index_multipler));
 
-      /* "renqualizer.pyx":140
+      /* "renqualizer.pyx":142
  *             for x from 0 <= x < out_csurface.w:
  *                 get_x = <int> (x * x_index_multipler)
  *                 for _x from 0 <= _x < 4:             # <<<<<<<<<<<<<<
@@ -3026,7 +3029,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
  */
       for (__pyx_v__x = 0; __pyx_v__x < 4; __pyx_v__x++) {
 
-        /* "renqualizer.pyx":141
+        /* "renqualizer.pyx":143
  *                 get_x = <int> (x * x_index_multipler)
  *                 for _x from 0 <= _x < 4:
  *                     out_pixels[((x * 4) + _x)] = pixel_line[((get_x * 4) + _x)]             # <<<<<<<<<<<<<<
@@ -3037,7 +3040,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
       }
     }
 
-    /* "renqualizer.pyx":142
+    /* "renqualizer.pyx":144
  *                 for _x from 0 <= _x < 4:
  *                     out_pixels[((x * 4) + _x)] = pixel_line[((get_x * 4) + _x)]
  *             out_pixels += out_csurface.pitch             # <<<<<<<<<<<<<<
@@ -3047,7 +3050,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
     __pyx_v_out_pixels = (__pyx_v_out_pixels + __pyx_v_out_csurface->pitch);
   }
 
-  /* "renqualizer.pyx":143
+  /* "renqualizer.pyx":145
  *                     out_pixels[((x * 4) + _x)] = pixel_line[((get_x * 4) + _x)]
  *             out_pixels += out_csurface.pitch
  *         return out_pysurface             # <<<<<<<<<<<<<<
@@ -3059,7 +3062,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
   __pyx_r = __pyx_v_out_pysurface;
   goto __pyx_L0;
 
-  /* "renqualizer.pyx":54
+  /* "renqualizer.pyx":56
  *         self._init()
  * 
  *     def draw_equalizer(             # <<<<<<<<<<<<<<
@@ -3087,7 +3090,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_2draw_equalizer(CYTHON
   return __pyx_r;
 }
 
-/* "renqualizer.pyx":146
+/* "renqualizer.pyx":148
  * 
  *     @classmethod
  *     def __get_exception(cls, action=None, error_code=None, _exc_type=None):             # <<<<<<<<<<<<<<
@@ -3152,7 +3155,7 @@ static PyObject *__pyx_pw_11renqualizer_15BassDataHandler_5__get_exception(PyObj
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__get_exception") < 0)) __PYX_ERR(0, 146, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__get_exception") < 0)) __PYX_ERR(0, 148, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -3174,7 +3177,7 @@ static PyObject *__pyx_pw_11renqualizer_15BassDataHandler_5__get_exception(PyObj
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__get_exception", 0, 1, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 146, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__get_exception", 0, 1, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 148, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("renqualizer.BassDataHandler.__get_exception", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -3200,7 +3203,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_4__get_exception(CYTHO
   PyObject *__pyx_t_6 = NULL;
   __Pyx_RefNannySetupContext("__get_exception", 0);
 
-  /* "renqualizer.pyx":147
+  /* "renqualizer.pyx":149
  *     @classmethod
  *     def __get_exception(cls, action=None, error_code=None, _exc_type=None):
  *         ExceptionType = Exception             # <<<<<<<<<<<<<<
@@ -3210,32 +3213,32 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_4__get_exception(CYTHO
   __Pyx_INCREF(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])));
   __pyx_v_ExceptionType = ((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0]));
 
-  /* "renqualizer.pyx":148
+  /* "renqualizer.pyx":150
  *     def __get_exception(cls, action=None, error_code=None, _exc_type=None):
  *         ExceptionType = Exception
  *         if hasattr(_exc_type, "__mro__"):             # <<<<<<<<<<<<<<
  *             if Exception in _exc_type.__mro__:
  *                 ExceptionType = _exc_type
  */
-  __pyx_t_1 = __Pyx_HasAttr(__pyx_v__exc_type, __pyx_n_s_mro); if (unlikely(__pyx_t_1 == ((int)-1))) __PYX_ERR(0, 148, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_HasAttr(__pyx_v__exc_type, __pyx_n_s_mro); if (unlikely(__pyx_t_1 == ((int)-1))) __PYX_ERR(0, 150, __pyx_L1_error)
   __pyx_t_2 = (__pyx_t_1 != 0);
   if (__pyx_t_2) {
 
-    /* "renqualizer.pyx":149
+    /* "renqualizer.pyx":151
  *         ExceptionType = Exception
  *         if hasattr(_exc_type, "__mro__"):
  *             if Exception in _exc_type.__mro__:             # <<<<<<<<<<<<<<
  *                 ExceptionType = _exc_type
  *         trace_text = "{0}:".format(cls.__name__)
  */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v__exc_type, __pyx_n_s_mro); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 149, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v__exc_type, __pyx_n_s_mro); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 151, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_2 = (__Pyx_PySequence_ContainsTF(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_t_3, Py_EQ)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 149, __pyx_L1_error)
+    __pyx_t_2 = (__Pyx_PySequence_ContainsTF(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_t_3, Py_EQ)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 151, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_1 = (__pyx_t_2 != 0);
     if (__pyx_t_1) {
 
-      /* "renqualizer.pyx":150
+      /* "renqualizer.pyx":152
  *         if hasattr(_exc_type, "__mro__"):
  *             if Exception in _exc_type.__mro__:
  *                 ExceptionType = _exc_type             # <<<<<<<<<<<<<<
@@ -3245,7 +3248,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_4__get_exception(CYTHO
       __Pyx_INCREF(__pyx_v__exc_type);
       __Pyx_DECREF_SET(__pyx_v_ExceptionType, __pyx_v__exc_type);
 
-      /* "renqualizer.pyx":149
+      /* "renqualizer.pyx":151
  *         ExceptionType = Exception
  *         if hasattr(_exc_type, "__mro__"):
  *             if Exception in _exc_type.__mro__:             # <<<<<<<<<<<<<<
@@ -3254,7 +3257,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_4__get_exception(CYTHO
  */
     }
 
-    /* "renqualizer.pyx":148
+    /* "renqualizer.pyx":150
  *     def __get_exception(cls, action=None, error_code=None, _exc_type=None):
  *         ExceptionType = Exception
  *         if hasattr(_exc_type, "__mro__"):             # <<<<<<<<<<<<<<
@@ -3263,16 +3266,16 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_4__get_exception(CYTHO
  */
   }
 
-  /* "renqualizer.pyx":151
+  /* "renqualizer.pyx":153
  *             if Exception in _exc_type.__mro__:
  *                 ExceptionType = _exc_type
  *         trace_text = "{0}:".format(cls.__name__)             # <<<<<<<<<<<<<<
  *         if action:
  *             trace_text += " An error occurred while {0}.".format(action)
  */
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_0, __pyx_n_s_format); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 151, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_0, __pyx_n_s_format); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 153, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_name); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 151, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_cls, __pyx_n_s_name); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 153, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_6 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_4))) {
@@ -3287,30 +3290,30 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_4__get_exception(CYTHO
   __pyx_t_3 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_6, __pyx_t_5) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 151, __pyx_L1_error)
+  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 153, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_v_trace_text = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "renqualizer.pyx":152
+  /* "renqualizer.pyx":154
  *                 ExceptionType = _exc_type
  *         trace_text = "{0}:".format(cls.__name__)
  *         if action:             # <<<<<<<<<<<<<<
  *             trace_text += " An error occurred while {0}.".format(action)
  *         if error_code:
  */
-  __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_action); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 152, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_action); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 154, __pyx_L1_error)
   if (__pyx_t_1) {
 
-    /* "renqualizer.pyx":153
+    /* "renqualizer.pyx":155
  *         trace_text = "{0}:".format(cls.__name__)
  *         if action:
  *             trace_text += " An error occurred while {0}.".format(action)             # <<<<<<<<<<<<<<
  *         if error_code:
  *             trace_text += " Error code is '{0}'.".format(error_code)
  */
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_An_error_occurred_while_0, __pyx_n_s_format); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 153, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_An_error_occurred_while_0, __pyx_n_s_format); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 155, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_5 = NULL;
     if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_4))) {
@@ -3324,16 +3327,16 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_4__get_exception(CYTHO
     }
     __pyx_t_3 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_5, __pyx_v_action) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_v_action);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 153, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 155, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = PyNumber_InPlaceAdd(__pyx_v_trace_text, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 153, __pyx_L1_error)
+    __pyx_t_4 = PyNumber_InPlaceAdd(__pyx_v_trace_text, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 155, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF_SET(__pyx_v_trace_text, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "renqualizer.pyx":152
+    /* "renqualizer.pyx":154
  *                 ExceptionType = _exc_type
  *         trace_text = "{0}:".format(cls.__name__)
  *         if action:             # <<<<<<<<<<<<<<
@@ -3342,24 +3345,24 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_4__get_exception(CYTHO
  */
   }
 
-  /* "renqualizer.pyx":154
+  /* "renqualizer.pyx":156
  *         if action:
  *             trace_text += " An error occurred while {0}.".format(action)
  *         if error_code:             # <<<<<<<<<<<<<<
  *             trace_text += " Error code is '{0}'.".format(error_code)
  *         trace_text = trace_text.rstrip(':')
  */
-  __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_error_code); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 154, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_error_code); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 156, __pyx_L1_error)
   if (__pyx_t_1) {
 
-    /* "renqualizer.pyx":155
+    /* "renqualizer.pyx":157
  *             trace_text += " An error occurred while {0}.".format(action)
  *         if error_code:
  *             trace_text += " Error code is '{0}'.".format(error_code)             # <<<<<<<<<<<<<<
  *         trace_text = trace_text.rstrip(':')
  *         return ExceptionType(trace_text)
  */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_Error_code_is_0, __pyx_n_s_format); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 155, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_Error_code_is_0, __pyx_n_s_format); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 157, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_5 = NULL;
     if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_3))) {
@@ -3373,16 +3376,16 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_4__get_exception(CYTHO
     }
     __pyx_t_4 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_5, __pyx_v_error_code) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_error_code);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 155, __pyx_L1_error)
+    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 157, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = PyNumber_InPlaceAdd(__pyx_v_trace_text, __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 155, __pyx_L1_error)
+    __pyx_t_3 = PyNumber_InPlaceAdd(__pyx_v_trace_text, __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 157, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF_SET(__pyx_v_trace_text, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "renqualizer.pyx":154
+    /* "renqualizer.pyx":156
  *         if action:
  *             trace_text += " An error occurred while {0}.".format(action)
  *         if error_code:             # <<<<<<<<<<<<<<
@@ -3391,14 +3394,14 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_4__get_exception(CYTHO
  */
   }
 
-  /* "renqualizer.pyx":156
+  /* "renqualizer.pyx":158
  *         if error_code:
  *             trace_text += " Error code is '{0}'.".format(error_code)
  *         trace_text = trace_text.rstrip(':')             # <<<<<<<<<<<<<<
  *         return ExceptionType(trace_text)
  * 
  */
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_trace_text, __pyx_n_s_rstrip); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 156, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_trace_text, __pyx_n_s_rstrip); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 158, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_4))) {
@@ -3412,13 +3415,13 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_4__get_exception(CYTHO
   }
   __pyx_t_3 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_5, __pyx_kp_s__2) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_kp_s__2);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 156, __pyx_L1_error)
+  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 158, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF_SET(__pyx_v_trace_text, __pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "renqualizer.pyx":157
+  /* "renqualizer.pyx":159
  *             trace_text += " Error code is '{0}'.".format(error_code)
  *         trace_text = trace_text.rstrip(':')
  *         return ExceptionType(trace_text)             # <<<<<<<<<<<<<<
@@ -3439,14 +3442,14 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_4__get_exception(CYTHO
   }
   __pyx_t_3 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_5, __pyx_v_trace_text) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_v_trace_text);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 157, __pyx_L1_error)
+  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 159, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_r = __pyx_t_3;
   __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "renqualizer.pyx":146
+  /* "renqualizer.pyx":148
  * 
  *     @classmethod
  *     def __get_exception(cls, action=None, error_code=None, _exc_type=None):             # <<<<<<<<<<<<<<
@@ -3470,7 +3473,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_4__get_exception(CYTHO
   return __pyx_r;
 }
 
-/* "renqualizer.pyx":159
+/* "renqualizer.pyx":161
  *         return ExceptionType(trace_text)
  * 
  *     def _init(self):             # <<<<<<<<<<<<<<
@@ -3505,7 +3508,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_6_init(CYTHON_UNUSED P
   PyObject *__pyx_t_7 = NULL;
   __Pyx_RefNannySetupContext("_init", 0);
 
-  /* "renqualizer.pyx":160
+  /* "renqualizer.pyx":162
  * 
  *     def _init(self):
  *         cdef int error_code = init()             # <<<<<<<<<<<<<<
@@ -3514,7 +3517,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_6_init(CYTHON_UNUSED P
  */
   __pyx_v_error_code = init();
 
-  /* "renqualizer.pyx":161
+  /* "renqualizer.pyx":163
  *     def _init(self):
  *         cdef int error_code = init()
  *         if error_code == (-2):             # <<<<<<<<<<<<<<
@@ -3526,7 +3529,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_6_init(CYTHON_UNUSED P
     goto __pyx_L3;
   }
 
-  /* "renqualizer.pyx":164
+  /* "renqualizer.pyx":166
  *             # Already initialized.
  *             pass
  *         elif error_code:             # <<<<<<<<<<<<<<
@@ -3536,16 +3539,16 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_6_init(CYTHON_UNUSED P
   __pyx_t_1 = (__pyx_v_error_code != 0);
   if (unlikely(__pyx_t_1)) {
 
-    /* "renqualizer.pyx":165
+    /* "renqualizer.pyx":167
  *             pass
  *         elif error_code:
  *            raise self.__get_exception("initialize recording", error_code)             # <<<<<<<<<<<<<<
  * 
  *     def free_resources(self):
  */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__get_exception); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 165, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__get_exception); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 167, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_error_code); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 165, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_error_code); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 167, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_5 = NULL;
     __pyx_t_6 = 0;
@@ -3562,7 +3565,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_6_init(CYTHON_UNUSED P
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_3)) {
       PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_kp_s_initialize_recording, __pyx_t_4};
-      __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 165, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 167, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -3571,14 +3574,14 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_6_init(CYTHON_UNUSED P
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
       PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_kp_s_initialize_recording, __pyx_t_4};
-      __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 165, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 167, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     } else
     #endif
     {
-      __pyx_t_7 = PyTuple_New(2+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 165, __pyx_L1_error)
+      __pyx_t_7 = PyTuple_New(2+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 167, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       if (__pyx_t_5) {
         __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_5); __pyx_t_5 = NULL;
@@ -3589,16 +3592,16 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_6_init(CYTHON_UNUSED P
       __Pyx_GIVEREF(__pyx_t_4);
       PyTuple_SET_ITEM(__pyx_t_7, 1+__pyx_t_6, __pyx_t_4);
       __pyx_t_4 = 0;
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_7, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 165, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_7, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 167, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     }
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_Raise(__pyx_t_2, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __PYX_ERR(0, 165, __pyx_L1_error)
+    __PYX_ERR(0, 167, __pyx_L1_error)
 
-    /* "renqualizer.pyx":164
+    /* "renqualizer.pyx":166
  *             # Already initialized.
  *             pass
  *         elif error_code:             # <<<<<<<<<<<<<<
@@ -3608,7 +3611,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_6_init(CYTHON_UNUSED P
   }
   __pyx_L3:;
 
-  /* "renqualizer.pyx":159
+  /* "renqualizer.pyx":161
  *         return ExceptionType(trace_text)
  * 
  *     def _init(self):             # <<<<<<<<<<<<<<
@@ -3633,7 +3636,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_6_init(CYTHON_UNUSED P
   return __pyx_r;
 }
 
-/* "renqualizer.pyx":167
+/* "renqualizer.pyx":169
  *            raise self.__get_exception("initialize recording", error_code)
  * 
  *     def free_resources(self):             # <<<<<<<<<<<<<<
@@ -3668,7 +3671,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_8free_resources(CYTHON
   PyObject *__pyx_t_7 = NULL;
   __Pyx_RefNannySetupContext("free_resources", 0);
 
-  /* "renqualizer.pyx":168
+  /* "renqualizer.pyx":170
  * 
  *     def free_resources(self):
  *         cdef int error_code = freeStream()             # <<<<<<<<<<<<<<
@@ -3677,7 +3680,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_8free_resources(CYTHON
  */
   __pyx_v_error_code = freeStream();
 
-  /* "renqualizer.pyx":169
+  /* "renqualizer.pyx":171
  *     def free_resources(self):
  *         cdef int error_code = freeStream()
  *         if error_code == (-2):             # <<<<<<<<<<<<<<
@@ -3689,7 +3692,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_8free_resources(CYTHON
     goto __pyx_L3;
   }
 
-  /* "renqualizer.pyx":172
+  /* "renqualizer.pyx":174
  *             # Not initialized.
  *             pass
  *         elif error_code:             # <<<<<<<<<<<<<<
@@ -3699,16 +3702,16 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_8free_resources(CYTHON
   __pyx_t_1 = (__pyx_v_error_code != 0);
   if (unlikely(__pyx_t_1)) {
 
-    /* "renqualizer.pyx":173
+    /* "renqualizer.pyx":175
  *             pass
  *         elif error_code:
  *            raise self.__get_exception("freeing resources", error_code)             # <<<<<<<<<<<<<<
  * 
  *     def get_volume(self, renpy_channel):
  */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__get_exception); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 173, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__get_exception); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 175, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_error_code); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 173, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_error_code); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 175, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_5 = NULL;
     __pyx_t_6 = 0;
@@ -3725,7 +3728,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_8free_resources(CYTHON
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_3)) {
       PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_kp_s_freeing_resources, __pyx_t_4};
-      __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 173, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 175, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -3734,14 +3737,14 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_8free_resources(CYTHON
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
       PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_kp_s_freeing_resources, __pyx_t_4};
-      __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 173, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 175, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     } else
     #endif
     {
-      __pyx_t_7 = PyTuple_New(2+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 173, __pyx_L1_error)
+      __pyx_t_7 = PyTuple_New(2+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 175, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       if (__pyx_t_5) {
         __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_5); __pyx_t_5 = NULL;
@@ -3752,16 +3755,16 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_8free_resources(CYTHON
       __Pyx_GIVEREF(__pyx_t_4);
       PyTuple_SET_ITEM(__pyx_t_7, 1+__pyx_t_6, __pyx_t_4);
       __pyx_t_4 = 0;
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_7, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 173, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_7, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 175, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     }
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_Raise(__pyx_t_2, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __PYX_ERR(0, 173, __pyx_L1_error)
+    __PYX_ERR(0, 175, __pyx_L1_error)
 
-    /* "renqualizer.pyx":172
+    /* "renqualizer.pyx":174
  *             # Not initialized.
  *             pass
  *         elif error_code:             # <<<<<<<<<<<<<<
@@ -3771,7 +3774,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_8free_resources(CYTHON
   }
   __pyx_L3:;
 
-  /* "renqualizer.pyx":167
+  /* "renqualizer.pyx":169
  *            raise self.__get_exception("initialize recording", error_code)
  * 
  *     def free_resources(self):             # <<<<<<<<<<<<<<
@@ -3796,7 +3799,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_8free_resources(CYTHON
   return __pyx_r;
 }
 
-/* "renqualizer.pyx":175
+/* "renqualizer.pyx":177
  *            raise self.__get_exception("freeing resources", error_code)
  * 
  *     def get_volume(self, renpy_channel):             # <<<<<<<<<<<<<<
@@ -3836,11 +3839,11 @@ static PyObject *__pyx_pw_11renqualizer_15BassDataHandler_11get_volume(PyObject 
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_renpy_channel)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("get_volume", 1, 2, 2, 1); __PYX_ERR(0, 175, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("get_volume", 1, 2, 2, 1); __PYX_ERR(0, 177, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_volume") < 0)) __PYX_ERR(0, 175, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_volume") < 0)) __PYX_ERR(0, 177, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -3853,7 +3856,7 @@ static PyObject *__pyx_pw_11renqualizer_15BassDataHandler_11get_volume(PyObject 
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("get_volume", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 175, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("get_volume", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 177, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("renqualizer.BassDataHandler.get_volume", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -3874,7 +3877,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_10get_volume(CYTHON_UN
   PyObject *__pyx_t_3 = NULL;
   __Pyx_RefNannySetupContext("get_volume", 0);
 
-  /* "renqualizer.pyx":176
+  /* "renqualizer.pyx":178
  * 
  *     def get_volume(self, renpy_channel):
  *         return max(self.get_data(renpy_channel))             # <<<<<<<<<<<<<<
@@ -3882,7 +3885,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_10get_volume(CYTHON_UN
  *     def get_data(self, renpy_channel):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_get_data); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 176, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_get_data); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 178, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -3896,17 +3899,17 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_10get_volume(CYTHON_UN
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, __pyx_v_renpy_channel) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_renpy_channel);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 176, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 178, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_max, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 176, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_max, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 178, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "renqualizer.pyx":175
+  /* "renqualizer.pyx":177
  *            raise self.__get_exception("freeing resources", error_code)
  * 
  *     def get_volume(self, renpy_channel):             # <<<<<<<<<<<<<<
@@ -3927,7 +3930,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_10get_volume(CYTHON_UN
   return __pyx_r;
 }
 
-/* "renqualizer.pyx":178
+/* "renqualizer.pyx":180
  *         return max(self.get_data(renpy_channel))
  * 
  *     def get_data(self, renpy_channel):             # <<<<<<<<<<<<<<
@@ -3967,11 +3970,11 @@ static PyObject *__pyx_pw_11renqualizer_15BassDataHandler_13get_data(PyObject *_
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_renpy_channel)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("get_data", 1, 2, 2, 1); __PYX_ERR(0, 178, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("get_data", 1, 2, 2, 1); __PYX_ERR(0, 180, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_data") < 0)) __PYX_ERR(0, 178, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_data") < 0)) __PYX_ERR(0, 180, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -3984,7 +3987,7 @@ static PyObject *__pyx_pw_11renqualizer_15BassDataHandler_13get_data(PyObject *_
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("get_data", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 178, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("get_data", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 180, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("renqualizer.BassDataHandler.get_data", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -4007,14 +4010,14 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_12get_data(CYTHON_UNUS
   int __pyx_t_4;
   __Pyx_RefNannySetupContext("get_data", 0);
 
-  /* "renqualizer.pyx":179
+  /* "renqualizer.pyx":181
  * 
  *     def get_data(self, renpy_channel):
  *         result = self._get_data(renpy_channel)             # <<<<<<<<<<<<<<
  *         if result:
  *             return result
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_get_data_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 179, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_get_data_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 181, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -4028,23 +4031,23 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_12get_data(CYTHON_UNUS
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, __pyx_v_renpy_channel) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_renpy_channel);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 179, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 181, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_result = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "renqualizer.pyx":180
+  /* "renqualizer.pyx":182
  *     def get_data(self, renpy_channel):
  *         result = self._get_data(renpy_channel)
  *         if result:             # <<<<<<<<<<<<<<
  *             return result
  *         return tuple(self._get_octave_mapping(fill_zeros=True))
  */
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_result); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 180, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_result); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 182, __pyx_L1_error)
   if (__pyx_t_4) {
 
-    /* "renqualizer.pyx":181
+    /* "renqualizer.pyx":183
  *         result = self._get_data(renpy_channel)
  *         if result:
  *             return result             # <<<<<<<<<<<<<<
@@ -4056,7 +4059,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_12get_data(CYTHON_UNUS
     __pyx_r = __pyx_v_result;
     goto __pyx_L0;
 
-    /* "renqualizer.pyx":180
+    /* "renqualizer.pyx":182
  *     def get_data(self, renpy_channel):
  *         result = self._get_data(renpy_channel)
  *         if result:             # <<<<<<<<<<<<<<
@@ -4065,7 +4068,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_12get_data(CYTHON_UNUS
  */
   }
 
-  /* "renqualizer.pyx":182
+  /* "renqualizer.pyx":184
  *         if result:
  *             return result
  *         return tuple(self._get_octave_mapping(fill_zeros=True))             # <<<<<<<<<<<<<<
@@ -4073,23 +4076,23 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_12get_data(CYTHON_UNUS
  *     def _get_data(self, renpy_channel):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_get_octave_mapping); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 182, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_get_octave_mapping); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 184, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 182, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 184, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_fill_zeros, Py_True) < 0) __PYX_ERR(0, 182, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_empty_tuple, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 182, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_fill_zeros, Py_True) < 0) __PYX_ERR(0, 184, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_empty_tuple, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 184, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PySequence_Tuple(__pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 182, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PySequence_Tuple(__pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 184, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "renqualizer.pyx":178
+  /* "renqualizer.pyx":180
  *         return max(self.get_data(renpy_channel))
  * 
  *     def get_data(self, renpy_channel):             # <<<<<<<<<<<<<<
@@ -4111,7 +4114,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_12get_data(CYTHON_UNUS
   return __pyx_r;
 }
 
-/* "renqualizer.pyx":184
+/* "renqualizer.pyx":186
  *         return tuple(self._get_octave_mapping(fill_zeros=True))
  * 
  *     def _get_data(self, renpy_channel):             # <<<<<<<<<<<<<<
@@ -4152,11 +4155,11 @@ static PyObject *__pyx_pw_11renqualizer_15BassDataHandler_15_get_data(PyObject *
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_renpy_channel)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("_get_data", 1, 2, 2, 1); __PYX_ERR(0, 184, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("_get_data", 1, 2, 2, 1); __PYX_ERR(0, 186, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "_get_data") < 0)) __PYX_ERR(0, 184, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "_get_data") < 0)) __PYX_ERR(0, 186, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -4169,7 +4172,7 @@ static PyObject *__pyx_pw_11renqualizer_15BassDataHandler_15_get_data(PyObject *
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("_get_data", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 184, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("_get_data", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 186, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("renqualizer.BassDataHandler._get_data", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -4205,16 +4208,18 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
   int __pyx_t_9;
   int __pyx_t_10;
   int __pyx_t_11;
-  float __pyx_t_12;
-  PyObject *__pyx_t_13 = NULL;
-  PyObject *__pyx_t_14 = NULL;
+  long __pyx_t_12;
+  long __pyx_t_13;
+  float __pyx_t_14;
   PyObject *__pyx_t_15 = NULL;
   PyObject *__pyx_t_16 = NULL;
   PyObject *__pyx_t_17 = NULL;
   PyObject *__pyx_t_18 = NULL;
+  PyObject *__pyx_t_19 = NULL;
+  PyObject *__pyx_t_20 = NULL;
   __Pyx_RefNannySetupContext("_get_data", 0);
 
-  /* "renqualizer.pyx":198
+  /* "renqualizer.pyx":200
  *             SDL_RWops *_c_file
  * 
  *         with self.__audio_module.lock:             # <<<<<<<<<<<<<<
@@ -4222,14 +4227,14 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
  *             if not self.__audio_module.pcm_ok:
  */
   /*with:*/ {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__audio_module); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 198, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__audio_module); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 200, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_lock); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 198, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_lock); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 200, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_3 = __Pyx_PyObject_LookupSpecial(__pyx_t_2, __pyx_n_s_exit); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 198, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_LookupSpecial(__pyx_t_2, __pyx_n_s_exit); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 200, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_PyObject_LookupSpecial(__pyx_t_2, __pyx_n_s_enter); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 198, __pyx_L3_error)
+    __pyx_t_4 = __Pyx_PyObject_LookupSpecial(__pyx_t_2, __pyx_n_s_enter); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 200, __pyx_L3_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_5 = NULL;
     if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_4))) {
@@ -4243,7 +4248,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
     }
     __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_5) : __Pyx_PyObject_CallNoArg(__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 198, __pyx_L3_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 200, __pyx_L3_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -4258,24 +4263,24 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
         __Pyx_XGOTREF(__pyx_t_8);
         /*try:*/ {
 
-          /* "renqualizer.pyx":200
+          /* "renqualizer.pyx":202
  *         with self.__audio_module.lock:
  * 
  *             if not self.__audio_module.pcm_ok:             # <<<<<<<<<<<<<<
  *                 return None
  * 
  */
-          __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__audio_module); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 200, __pyx_L7_error)
+          __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__audio_module); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 202, __pyx_L7_error)
           __Pyx_GOTREF(__pyx_t_2);
-          __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_pcm_ok); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 200, __pyx_L7_error)
+          __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_pcm_ok); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 202, __pyx_L7_error)
           __Pyx_GOTREF(__pyx_t_1);
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-          __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 200, __pyx_L7_error)
+          __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 202, __pyx_L7_error)
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
           __pyx_t_10 = ((!__pyx_t_9) != 0);
           if (__pyx_t_10) {
 
-            /* "renqualizer.pyx":201
+            /* "renqualizer.pyx":203
  * 
  *             if not self.__audio_module.pcm_ok:
  *                 return None             # <<<<<<<<<<<<<<
@@ -4286,7 +4291,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
             __pyx_r = Py_None; __Pyx_INCREF(Py_None);
             goto __pyx_L11_try_return;
 
-            /* "renqualizer.pyx":200
+            /* "renqualizer.pyx":202
  *         with self.__audio_module.lock:
  * 
  *             if not self.__audio_module.pcm_ok:             # <<<<<<<<<<<<<<
@@ -4295,19 +4300,19 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
  */
           }
 
-          /* "renqualizer.pyx":203
+          /* "renqualizer.pyx":205
  *                 return None
  * 
  *             renpy_path = self.__renpysound.playing_name(renpy_channel.number)             # <<<<<<<<<<<<<<
  *             if not renpy_path:
  *                 return None
  */
-          __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__renpysound); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 203, __pyx_L7_error)
+          __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__renpysound); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 205, __pyx_L7_error)
           __Pyx_GOTREF(__pyx_t_2);
-          __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_playing_name); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 203, __pyx_L7_error)
+          __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_playing_name); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 205, __pyx_L7_error)
           __Pyx_GOTREF(__pyx_t_4);
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-          __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_renpy_channel, __pyx_n_s_number); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 203, __pyx_L7_error)
+          __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_renpy_channel, __pyx_n_s_number); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 205, __pyx_L7_error)
           __Pyx_GOTREF(__pyx_t_2);
           __pyx_t_5 = NULL;
           if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_4))) {
@@ -4322,24 +4327,24 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
           __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_5, __pyx_t_2) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_2);
           __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-          if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 203, __pyx_L7_error)
+          if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 205, __pyx_L7_error)
           __Pyx_GOTREF(__pyx_t_1);
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
           __pyx_v_renpy_path = __pyx_t_1;
           __pyx_t_1 = 0;
 
-          /* "renqualizer.pyx":204
+          /* "renqualizer.pyx":206
  * 
  *             renpy_path = self.__renpysound.playing_name(renpy_channel.number)
  *             if not renpy_path:             # <<<<<<<<<<<<<<
  *                 return None
  * 
  */
-          __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_v_renpy_path); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 204, __pyx_L7_error)
+          __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_v_renpy_path); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 206, __pyx_L7_error)
           __pyx_t_9 = ((!__pyx_t_10) != 0);
           if (__pyx_t_9) {
 
-            /* "renqualizer.pyx":205
+            /* "renqualizer.pyx":207
  *             renpy_path = self.__renpysound.playing_name(renpy_channel.number)
  *             if not renpy_path:
  *                 return None             # <<<<<<<<<<<<<<
@@ -4350,7 +4355,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
             __pyx_r = Py_None; __Pyx_INCREF(Py_None);
             goto __pyx_L11_try_return;
 
-            /* "renqualizer.pyx":204
+            /* "renqualizer.pyx":206
  * 
  *             renpy_path = self.__renpysound.playing_name(renpy_channel.number)
  *             if not renpy_path:             # <<<<<<<<<<<<<<
@@ -4359,19 +4364,19 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
  */
           }
 
-          /* "renqualizer.pyx":207
+          /* "renqualizer.pyx":209
  *                 return None
  * 
  *             pos_in_ms = self.__renpysound.get_pos(renpy_channel.number)             # <<<<<<<<<<<<<<
  *             if pos_in_ms == (-1):
  *                 return None
  */
-          __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__renpysound); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 207, __pyx_L7_error)
+          __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__renpysound); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 209, __pyx_L7_error)
           __Pyx_GOTREF(__pyx_t_4);
-          __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_get_pos); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 207, __pyx_L7_error)
+          __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_get_pos); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 209, __pyx_L7_error)
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-          __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_renpy_channel, __pyx_n_s_number); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 207, __pyx_L7_error)
+          __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_renpy_channel, __pyx_n_s_number); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 209, __pyx_L7_error)
           __Pyx_GOTREF(__pyx_t_4);
           __pyx_t_5 = NULL;
           if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -4386,78 +4391,113 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
           __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_5, __pyx_t_4) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_4);
           __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-          if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 207, __pyx_L7_error)
+          if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 209, __pyx_L7_error)
           __Pyx_GOTREF(__pyx_t_1);
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-          __pyx_t_11 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_11 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 207, __pyx_L7_error)
+          __pyx_t_11 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_11 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 209, __pyx_L7_error)
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
           __pyx_v_pos_in_ms = __pyx_t_11;
 
-          /* "renqualizer.pyx":208
+          /* "renqualizer.pyx":210
  * 
  *             pos_in_ms = self.__renpysound.get_pos(renpy_channel.number)
  *             if pos_in_ms == (-1):             # <<<<<<<<<<<<<<
  *                 return None
- * 
+ *             pos_in_ms += self.FIX_POS_OFFSET_MS
  */
           __pyx_t_9 = ((__pyx_v_pos_in_ms == -1L) != 0);
           if (__pyx_t_9) {
 
-            /* "renqualizer.pyx":209
+            /* "renqualizer.pyx":211
  *             pos_in_ms = self.__renpysound.get_pos(renpy_channel.number)
  *             if pos_in_ms == (-1):
  *                 return None             # <<<<<<<<<<<<<<
- * 
- *             volume = self.__renpysound.get_volume(renpy_channel.number)
+ *             pos_in_ms += self.FIX_POS_OFFSET_MS
+ *             pos_in_ms = max(0, pos_in_ms)
  */
             __Pyx_XDECREF(__pyx_r);
             __pyx_r = Py_None; __Pyx_INCREF(Py_None);
             goto __pyx_L11_try_return;
 
-            /* "renqualizer.pyx":208
+            /* "renqualizer.pyx":210
  * 
  *             pos_in_ms = self.__renpysound.get_pos(renpy_channel.number)
  *             if pos_in_ms == (-1):             # <<<<<<<<<<<<<<
  *                 return None
- * 
+ *             pos_in_ms += self.FIX_POS_OFFSET_MS
  */
           }
 
-          /* "renqualizer.pyx":211
+          /* "renqualizer.pyx":212
+ *             if pos_in_ms == (-1):
  *                 return None
+ *             pos_in_ms += self.FIX_POS_OFFSET_MS             # <<<<<<<<<<<<<<
+ *             pos_in_ms = max(0, pos_in_ms)
+ * 
+ */
+          __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_pos_in_ms); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 212, __pyx_L7_error)
+          __Pyx_GOTREF(__pyx_t_1);
+          __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_FIX_POS_OFFSET_MS); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 212, __pyx_L7_error)
+          __Pyx_GOTREF(__pyx_t_2);
+          __pyx_t_4 = PyNumber_InPlaceAdd(__pyx_t_1, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 212, __pyx_L7_error)
+          __Pyx_GOTREF(__pyx_t_4);
+          __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+          __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+          __pyx_t_11 = __Pyx_PyInt_As_int(__pyx_t_4); if (unlikely((__pyx_t_11 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 212, __pyx_L7_error)
+          __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+          __pyx_v_pos_in_ms = __pyx_t_11;
+
+          /* "renqualizer.pyx":213
+ *                 return None
+ *             pos_in_ms += self.FIX_POS_OFFSET_MS
+ *             pos_in_ms = max(0, pos_in_ms)             # <<<<<<<<<<<<<<
+ * 
+ *             volume = self.__renpysound.get_volume(renpy_channel.number)
+ */
+          __pyx_t_11 = __pyx_v_pos_in_ms;
+          __pyx_t_12 = 0;
+          if (((__pyx_t_11 > __pyx_t_12) != 0)) {
+            __pyx_t_13 = __pyx_t_11;
+          } else {
+            __pyx_t_13 = __pyx_t_12;
+          }
+          __pyx_v_pos_in_ms = __pyx_t_13;
+
+          /* "renqualizer.pyx":215
+ *             pos_in_ms = max(0, pos_in_ms)
  * 
  *             volume = self.__renpysound.get_volume(renpy_channel.number)             # <<<<<<<<<<<<<<
  * 
  *             is_audiodata = False
  */
-          __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__renpysound); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 211, __pyx_L7_error)
+          __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__renpysound); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 215, __pyx_L7_error)
           __Pyx_GOTREF(__pyx_t_2);
-          __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get_volume); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 211, __pyx_L7_error)
-          __Pyx_GOTREF(__pyx_t_4);
+          __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get_volume); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 215, __pyx_L7_error)
+          __Pyx_GOTREF(__pyx_t_1);
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-          __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_renpy_channel, __pyx_n_s_number); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 211, __pyx_L7_error)
+          __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_renpy_channel, __pyx_n_s_number); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 215, __pyx_L7_error)
           __Pyx_GOTREF(__pyx_t_2);
           __pyx_t_5 = NULL;
-          if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_4))) {
-            __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+          if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
+            __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_1);
             if (likely(__pyx_t_5)) {
-              PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+              PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
               __Pyx_INCREF(__pyx_t_5);
               __Pyx_INCREF(function);
-              __Pyx_DECREF_SET(__pyx_t_4, function);
+              __Pyx_DECREF_SET(__pyx_t_1, function);
             }
           }
-          __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_5, __pyx_t_2) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_2);
+          __pyx_t_4 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_5, __pyx_t_2) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_2);
           __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-          if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 211, __pyx_L7_error)
-          __Pyx_GOTREF(__pyx_t_1);
-          __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-          __pyx_t_12 = __pyx_PyFloat_AsFloat(__pyx_t_1); if (unlikely((__pyx_t_12 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 211, __pyx_L7_error)
+          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 215, __pyx_L7_error)
+          __Pyx_GOTREF(__pyx_t_4);
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-          __pyx_v_volume = __pyx_t_12;
+          __pyx_t_14 = __pyx_PyFloat_AsFloat(__pyx_t_4); if (unlikely((__pyx_t_14 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 215, __pyx_L7_error)
+          __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+          __pyx_v_volume = __pyx_t_14;
 
-          /* "renqualizer.pyx":213
+          /* "renqualizer.pyx":217
  *             volume = self.__renpysound.get_volume(renpy_channel.number)
  * 
  *             is_audiodata = False             # <<<<<<<<<<<<<<
@@ -4466,38 +4506,38 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
  */
           __pyx_v_is_audiodata = 0;
 
-          /* "renqualizer.pyx":214
+          /* "renqualizer.pyx":218
  * 
  *             is_audiodata = False
  *             if hasattr(self.__audio_module, "AudioData"):             # <<<<<<<<<<<<<<
  *                 if isinstance(renpy_path, self.__audio_module.AudioData):
  *                     is_audiodata = True
  */
-          __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__audio_module); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 214, __pyx_L7_error)
-          __Pyx_GOTREF(__pyx_t_1);
-          __pyx_t_9 = __Pyx_HasAttr(__pyx_t_1, __pyx_n_s_AudioData); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(0, 214, __pyx_L7_error)
-          __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+          __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__audio_module); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 218, __pyx_L7_error)
+          __Pyx_GOTREF(__pyx_t_4);
+          __pyx_t_9 = __Pyx_HasAttr(__pyx_t_4, __pyx_n_s_AudioData); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(0, 218, __pyx_L7_error)
+          __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
           __pyx_t_10 = (__pyx_t_9 != 0);
           if (__pyx_t_10) {
 
-            /* "renqualizer.pyx":215
+            /* "renqualizer.pyx":219
  *             is_audiodata = False
  *             if hasattr(self.__audio_module, "AudioData"):
  *                 if isinstance(renpy_path, self.__audio_module.AudioData):             # <<<<<<<<<<<<<<
  *                     is_audiodata = True
  * 
  */
-            __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__audio_module); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 215, __pyx_L7_error)
-            __Pyx_GOTREF(__pyx_t_1);
-            __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_AudioData); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 215, __pyx_L7_error)
+            __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__audio_module); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 219, __pyx_L7_error)
             __Pyx_GOTREF(__pyx_t_4);
-            __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-            __pyx_t_10 = PyObject_IsInstance(__pyx_v_renpy_path, __pyx_t_4); if (unlikely(__pyx_t_10 == ((int)-1))) __PYX_ERR(0, 215, __pyx_L7_error)
+            __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_AudioData); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 219, __pyx_L7_error)
+            __Pyx_GOTREF(__pyx_t_1);
             __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+            __pyx_t_10 = PyObject_IsInstance(__pyx_v_renpy_path, __pyx_t_1); if (unlikely(__pyx_t_10 == ((int)-1))) __PYX_ERR(0, 219, __pyx_L7_error)
+            __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
             __pyx_t_9 = (__pyx_t_10 != 0);
             if (__pyx_t_9) {
 
-              /* "renqualizer.pyx":216
+              /* "renqualizer.pyx":220
  *             if hasattr(self.__audio_module, "AudioData"):
  *                 if isinstance(renpy_path, self.__audio_module.AudioData):
  *                     is_audiodata = True             # <<<<<<<<<<<<<<
@@ -4506,7 +4546,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
  */
               __pyx_v_is_audiodata = 1;
 
-              /* "renqualizer.pyx":215
+              /* "renqualizer.pyx":219
  *             is_audiodata = False
  *             if hasattr(self.__audio_module, "AudioData"):
  *                 if isinstance(renpy_path, self.__audio_module.AudioData):             # <<<<<<<<<<<<<<
@@ -4515,7 +4555,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
  */
             }
 
-            /* "renqualizer.pyx":214
+            /* "renqualizer.pyx":218
  * 
  *             is_audiodata = False
  *             if hasattr(self.__audio_module, "AudioData"):             # <<<<<<<<<<<<<<
@@ -4524,7 +4564,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
  */
           }
 
-          /* "renqualizer.pyx":218
+          /* "renqualizer.pyx":222
  *                     is_audiodata = True
  * 
  *             if not is_audiodata:             # <<<<<<<<<<<<<<
@@ -4534,24 +4574,24 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
           __pyx_t_9 = ((!(__pyx_v_is_audiodata != 0)) != 0);
           if (__pyx_t_9) {
 
-            /* "renqualizer.pyx":221
+            /* "renqualizer.pyx":225
  *                 renpy_path = u"".join(
  *                     (
  *                         renpy_channel.file_prefix,             # <<<<<<<<<<<<<<
  *                         renpy_channel.split_filename(renpy_path, False)[0],
  *                         renpy_channel.file_suffix
  */
-            __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_renpy_channel, __pyx_n_s_file_prefix); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 221, __pyx_L7_error)
-            __Pyx_GOTREF(__pyx_t_4);
+            __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_renpy_channel, __pyx_n_s_file_prefix); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 225, __pyx_L7_error)
+            __Pyx_GOTREF(__pyx_t_1);
 
-            /* "renqualizer.pyx":222
+            /* "renqualizer.pyx":226
  *                     (
  *                         renpy_channel.file_prefix,
  *                         renpy_channel.split_filename(renpy_path, False)[0],             # <<<<<<<<<<<<<<
  *                         renpy_channel.file_suffix
  *                     )
  */
-            __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_renpy_channel, __pyx_n_s_split_filename); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 222, __pyx_L7_error)
+            __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_renpy_channel, __pyx_n_s_split_filename); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 226, __pyx_L7_error)
             __Pyx_GOTREF(__pyx_t_2);
             __pyx_t_5 = NULL;
             __pyx_t_11 = 0;
@@ -4568,119 +4608,119 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
             #if CYTHON_FAST_PYCALL
             if (PyFunction_Check(__pyx_t_2)) {
               PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_v_renpy_path, Py_False};
-              __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 222, __pyx_L7_error)
+              __pyx_t_4 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 226, __pyx_L7_error)
               __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-              __Pyx_GOTREF(__pyx_t_1);
+              __Pyx_GOTREF(__pyx_t_4);
             } else
             #endif
             #if CYTHON_FAST_PYCCALL
             if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
               PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_v_renpy_path, Py_False};
-              __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 222, __pyx_L7_error)
+              __pyx_t_4 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 226, __pyx_L7_error)
               __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-              __Pyx_GOTREF(__pyx_t_1);
+              __Pyx_GOTREF(__pyx_t_4);
             } else
             #endif
             {
-              __pyx_t_13 = PyTuple_New(2+__pyx_t_11); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 222, __pyx_L7_error)
-              __Pyx_GOTREF(__pyx_t_13);
+              __pyx_t_15 = PyTuple_New(2+__pyx_t_11); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 226, __pyx_L7_error)
+              __Pyx_GOTREF(__pyx_t_15);
               if (__pyx_t_5) {
-                __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_13, 0, __pyx_t_5); __pyx_t_5 = NULL;
+                __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_15, 0, __pyx_t_5); __pyx_t_5 = NULL;
               }
               __Pyx_INCREF(__pyx_v_renpy_path);
               __Pyx_GIVEREF(__pyx_v_renpy_path);
-              PyTuple_SET_ITEM(__pyx_t_13, 0+__pyx_t_11, __pyx_v_renpy_path);
+              PyTuple_SET_ITEM(__pyx_t_15, 0+__pyx_t_11, __pyx_v_renpy_path);
               __Pyx_INCREF(Py_False);
               __Pyx_GIVEREF(Py_False);
-              PyTuple_SET_ITEM(__pyx_t_13, 1+__pyx_t_11, Py_False);
-              __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_13, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 222, __pyx_L7_error)
-              __Pyx_GOTREF(__pyx_t_1);
-              __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
+              PyTuple_SET_ITEM(__pyx_t_15, 1+__pyx_t_11, Py_False);
+              __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_15, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 226, __pyx_L7_error)
+              __Pyx_GOTREF(__pyx_t_4);
+              __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
             }
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 222, __pyx_L7_error)
+            __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_4, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 226, __pyx_L7_error)
             __Pyx_GOTREF(__pyx_t_2);
-            __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+            __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-            /* "renqualizer.pyx":223
+            /* "renqualizer.pyx":227
  *                         renpy_channel.file_prefix,
  *                         renpy_channel.split_filename(renpy_path, False)[0],
  *                         renpy_channel.file_suffix             # <<<<<<<<<<<<<<
  *                     )
  *                 )
  */
-            __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_renpy_channel, __pyx_n_s_file_suffix); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 223, __pyx_L7_error)
-            __Pyx_GOTREF(__pyx_t_1);
+            __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_renpy_channel, __pyx_n_s_file_suffix); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 227, __pyx_L7_error)
+            __Pyx_GOTREF(__pyx_t_4);
 
-            /* "renqualizer.pyx":221
+            /* "renqualizer.pyx":225
  *                 renpy_path = u"".join(
  *                     (
  *                         renpy_channel.file_prefix,             # <<<<<<<<<<<<<<
  *                         renpy_channel.split_filename(renpy_path, False)[0],
  *                         renpy_channel.file_suffix
  */
-            __pyx_t_13 = PyTuple_New(3); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 221, __pyx_L7_error)
-            __Pyx_GOTREF(__pyx_t_13);
-            __Pyx_GIVEREF(__pyx_t_4);
-            PyTuple_SET_ITEM(__pyx_t_13, 0, __pyx_t_4);
-            __Pyx_GIVEREF(__pyx_t_2);
-            PyTuple_SET_ITEM(__pyx_t_13, 1, __pyx_t_2);
+            __pyx_t_15 = PyTuple_New(3); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 225, __pyx_L7_error)
+            __Pyx_GOTREF(__pyx_t_15);
             __Pyx_GIVEREF(__pyx_t_1);
-            PyTuple_SET_ITEM(__pyx_t_13, 2, __pyx_t_1);
-            __pyx_t_4 = 0;
-            __pyx_t_2 = 0;
+            PyTuple_SET_ITEM(__pyx_t_15, 0, __pyx_t_1);
+            __Pyx_GIVEREF(__pyx_t_2);
+            PyTuple_SET_ITEM(__pyx_t_15, 1, __pyx_t_2);
+            __Pyx_GIVEREF(__pyx_t_4);
+            PyTuple_SET_ITEM(__pyx_t_15, 2, __pyx_t_4);
             __pyx_t_1 = 0;
+            __pyx_t_2 = 0;
+            __pyx_t_4 = 0;
 
-            /* "renqualizer.pyx":219
+            /* "renqualizer.pyx":223
  * 
  *             if not is_audiodata:
  *                 renpy_path = u"".join(             # <<<<<<<<<<<<<<
  *                     (
  *                         renpy_channel.file_prefix,
  */
-            __pyx_t_1 = PyUnicode_Join(__pyx_kp_u__3, __pyx_t_13); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 219, __pyx_L7_error)
-            __Pyx_GOTREF(__pyx_t_1);
-            __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-            __Pyx_DECREF_SET(__pyx_v_renpy_path, __pyx_t_1);
-            __pyx_t_1 = 0;
+            __pyx_t_4 = PyUnicode_Join(__pyx_kp_u__3, __pyx_t_15); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 223, __pyx_L7_error)
+            __Pyx_GOTREF(__pyx_t_4);
+            __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
+            __Pyx_DECREF_SET(__pyx_v_renpy_path, __pyx_t_4);
+            __pyx_t_4 = 0;
 
-            /* "renqualizer.pyx":226
+            /* "renqualizer.pyx":230
  *                     )
  *                 )
  *                 renpy_path = path.normpath(renpy_path).replace(u'\\', u'/')             # <<<<<<<<<<<<<<
  * 
  *             if self.__current_file != renpy_path:
  */
-            __Pyx_GetModuleGlobalName(__pyx_t_13, __pyx_n_s_path); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 226, __pyx_L7_error)
-            __Pyx_GOTREF(__pyx_t_13);
-            __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_13, __pyx_n_s_normpath); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 226, __pyx_L7_error)
+            __Pyx_GetModuleGlobalName(__pyx_t_15, __pyx_n_s_path); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 230, __pyx_L7_error)
+            __Pyx_GOTREF(__pyx_t_15);
+            __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_15, __pyx_n_s_normpath); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 230, __pyx_L7_error)
             __Pyx_GOTREF(__pyx_t_2);
-            __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-            __pyx_t_13 = NULL;
+            __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
+            __pyx_t_15 = NULL;
             if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
-              __pyx_t_13 = PyMethod_GET_SELF(__pyx_t_2);
-              if (likely(__pyx_t_13)) {
+              __pyx_t_15 = PyMethod_GET_SELF(__pyx_t_2);
+              if (likely(__pyx_t_15)) {
                 PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-                __Pyx_INCREF(__pyx_t_13);
+                __Pyx_INCREF(__pyx_t_15);
                 __Pyx_INCREF(function);
                 __Pyx_DECREF_SET(__pyx_t_2, function);
               }
             }
-            __pyx_t_1 = (__pyx_t_13) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_13, __pyx_v_renpy_path) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_renpy_path);
-            __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
-            if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 226, __pyx_L7_error)
-            __Pyx_GOTREF(__pyx_t_1);
+            __pyx_t_4 = (__pyx_t_15) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_15, __pyx_v_renpy_path) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_renpy_path);
+            __Pyx_XDECREF(__pyx_t_15); __pyx_t_15 = 0;
+            if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 230, __pyx_L7_error)
+            __Pyx_GOTREF(__pyx_t_4);
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_replace); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 226, __pyx_L7_error)
+            __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_replace); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 230, __pyx_L7_error)
             __Pyx_GOTREF(__pyx_t_2);
-            __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-            __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__6, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 226, __pyx_L7_error)
-            __Pyx_GOTREF(__pyx_t_1);
+            __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+            __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__6, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 230, __pyx_L7_error)
+            __Pyx_GOTREF(__pyx_t_4);
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __Pyx_DECREF_SET(__pyx_v_renpy_path, __pyx_t_1);
-            __pyx_t_1 = 0;
+            __Pyx_DECREF_SET(__pyx_v_renpy_path, __pyx_t_4);
+            __pyx_t_4 = 0;
 
-            /* "renqualizer.pyx":218
+            /* "renqualizer.pyx":222
  *                     is_audiodata = True
  * 
  *             if not is_audiodata:             # <<<<<<<<<<<<<<
@@ -4689,40 +4729,40 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
  */
           }
 
-          /* "renqualizer.pyx":228
+          /* "renqualizer.pyx":232
  *                 renpy_path = path.normpath(renpy_path).replace(u'\\', u'/')
  * 
  *             if self.__current_file != renpy_path:             # <<<<<<<<<<<<<<
  * 
  *                 self.__last_time = None
  */
-          __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__current_file); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 228, __pyx_L7_error)
-          __Pyx_GOTREF(__pyx_t_1);
-          __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_v_renpy_path, Py_NE); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 228, __pyx_L7_error)
-          __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-          __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 228, __pyx_L7_error)
+          __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__current_file); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 232, __pyx_L7_error)
+          __Pyx_GOTREF(__pyx_t_4);
+          __pyx_t_2 = PyObject_RichCompare(__pyx_t_4, __pyx_v_renpy_path, Py_NE); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 232, __pyx_L7_error)
+          __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+          __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 232, __pyx_L7_error)
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
           if (__pyx_t_9) {
 
-            /* "renqualizer.pyx":230
+            /* "renqualizer.pyx":234
  *             if self.__current_file != renpy_path:
  * 
  *                 self.__last_time = None             # <<<<<<<<<<<<<<
  *                 self.__last_data = None
  * 
  */
-            if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__last_time, Py_None) < 0) __PYX_ERR(0, 230, __pyx_L7_error)
+            if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__last_time, Py_None) < 0) __PYX_ERR(0, 234, __pyx_L7_error)
 
-            /* "renqualizer.pyx":231
+            /* "renqualizer.pyx":235
  * 
  *                 self.__last_time = None
  *                 self.__last_data = None             # <<<<<<<<<<<<<<
  * 
  *                 if is_audiodata:
  */
-            if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__last_data, Py_None) < 0) __PYX_ERR(0, 231, __pyx_L7_error)
+            if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__last_data, Py_None) < 0) __PYX_ERR(0, 235, __pyx_L7_error)
 
-            /* "renqualizer.pyx":233
+            /* "renqualizer.pyx":237
  *                 self.__last_data = None
  * 
  *                 if is_audiodata:             # <<<<<<<<<<<<<<
@@ -4732,34 +4772,34 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
             __pyx_t_9 = (__pyx_v_is_audiodata != 0);
             if (__pyx_t_9) {
 
-              /* "renqualizer.pyx":234
+              /* "renqualizer.pyx":238
  * 
  *                 if is_audiodata:
  *                     file_func = io.BytesIO             # <<<<<<<<<<<<<<
  *                     _arg = renpy_path.data
  *                 else:
  */
-              __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_io); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 234, __pyx_L7_error)
+              __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_io); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 238, __pyx_L7_error)
               __Pyx_GOTREF(__pyx_t_2);
-              __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_BytesIO); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 234, __pyx_L7_error)
-              __Pyx_GOTREF(__pyx_t_1);
+              __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_BytesIO); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 238, __pyx_L7_error)
+              __Pyx_GOTREF(__pyx_t_4);
               __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-              __pyx_v_file_func = __pyx_t_1;
-              __pyx_t_1 = 0;
+              __pyx_v_file_func = __pyx_t_4;
+              __pyx_t_4 = 0;
 
-              /* "renqualizer.pyx":235
+              /* "renqualizer.pyx":239
  *                 if is_audiodata:
  *                     file_func = io.BytesIO
  *                     _arg = renpy_path.data             # <<<<<<<<<<<<<<
  *                 else:
  *                     file_func = self.__audio_module.load
  */
-              __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_renpy_path, __pyx_n_s_data); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 235, __pyx_L7_error)
-              __Pyx_GOTREF(__pyx_t_1);
-              __pyx_v__arg = __pyx_t_1;
-              __pyx_t_1 = 0;
+              __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_renpy_path, __pyx_n_s_data); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 239, __pyx_L7_error)
+              __Pyx_GOTREF(__pyx_t_4);
+              __pyx_v__arg = __pyx_t_4;
+              __pyx_t_4 = 0;
 
-              /* "renqualizer.pyx":233
+              /* "renqualizer.pyx":237
  *                 self.__last_data = None
  * 
  *                 if is_audiodata:             # <<<<<<<<<<<<<<
@@ -4769,7 +4809,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
               goto __pyx_L20;
             }
 
-            /* "renqualizer.pyx":237
+            /* "renqualizer.pyx":241
  *                     _arg = renpy_path.data
  *                 else:
  *                     file_func = self.__audio_module.load             # <<<<<<<<<<<<<<
@@ -4777,15 +4817,15 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
  * 
  */
             /*else*/ {
-              __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__audio_module); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 237, __pyx_L7_error)
-              __Pyx_GOTREF(__pyx_t_1);
-              __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 237, __pyx_L7_error)
+              __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__audio_module); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 241, __pyx_L7_error)
+              __Pyx_GOTREF(__pyx_t_4);
+              __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_load); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 241, __pyx_L7_error)
               __Pyx_GOTREF(__pyx_t_2);
-              __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+              __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
               __pyx_v_file_func = __pyx_t_2;
               __pyx_t_2 = 0;
 
-              /* "renqualizer.pyx":238
+              /* "renqualizer.pyx":242
  *                 else:
  *                     file_func = self.__audio_module.load
  *                     _arg = renpy_path             # <<<<<<<<<<<<<<
@@ -4797,7 +4837,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
             }
             __pyx_L20:;
 
-            /* "renqualizer.pyx":240
+            /* "renqualizer.pyx":244
  *                     _arg = renpy_path
  * 
  *                 with file_func(_arg) as _py_file:             # <<<<<<<<<<<<<<
@@ -4806,56 +4846,56 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
  */
             /*with:*/ {
               __Pyx_INCREF(__pyx_v_file_func);
-              __pyx_t_1 = __pyx_v_file_func; __pyx_t_13 = NULL;
-              if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
-                __pyx_t_13 = PyMethod_GET_SELF(__pyx_t_1);
-                if (likely(__pyx_t_13)) {
-                  PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-                  __Pyx_INCREF(__pyx_t_13);
+              __pyx_t_4 = __pyx_v_file_func; __pyx_t_15 = NULL;
+              if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_4))) {
+                __pyx_t_15 = PyMethod_GET_SELF(__pyx_t_4);
+                if (likely(__pyx_t_15)) {
+                  PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+                  __Pyx_INCREF(__pyx_t_15);
                   __Pyx_INCREF(function);
-                  __Pyx_DECREF_SET(__pyx_t_1, function);
+                  __Pyx_DECREF_SET(__pyx_t_4, function);
                 }
               }
-              __pyx_t_2 = (__pyx_t_13) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_13, __pyx_v__arg) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_v__arg);
-              __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
-              if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 240, __pyx_L7_error)
+              __pyx_t_2 = (__pyx_t_15) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_15, __pyx_v__arg) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_v__arg);
+              __Pyx_XDECREF(__pyx_t_15); __pyx_t_15 = 0;
+              if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 244, __pyx_L7_error)
               __Pyx_GOTREF(__pyx_t_2);
-              __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-              __pyx_t_14 = __Pyx_PyObject_LookupSpecial(__pyx_t_2, __pyx_n_s_exit); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 240, __pyx_L7_error)
-              __Pyx_GOTREF(__pyx_t_14);
-              __pyx_t_13 = __Pyx_PyObject_LookupSpecial(__pyx_t_2, __pyx_n_s_enter); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 240, __pyx_L21_error)
-              __Pyx_GOTREF(__pyx_t_13);
-              __pyx_t_4 = NULL;
-              if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_13))) {
-                __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_13);
-                if (likely(__pyx_t_4)) {
-                  PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_13);
-                  __Pyx_INCREF(__pyx_t_4);
+              __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+              __pyx_t_16 = __Pyx_PyObject_LookupSpecial(__pyx_t_2, __pyx_n_s_exit); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 244, __pyx_L7_error)
+              __Pyx_GOTREF(__pyx_t_16);
+              __pyx_t_15 = __Pyx_PyObject_LookupSpecial(__pyx_t_2, __pyx_n_s_enter); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 244, __pyx_L21_error)
+              __Pyx_GOTREF(__pyx_t_15);
+              __pyx_t_1 = NULL;
+              if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_15))) {
+                __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_15);
+                if (likely(__pyx_t_1)) {
+                  PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_15);
+                  __Pyx_INCREF(__pyx_t_1);
                   __Pyx_INCREF(function);
-                  __Pyx_DECREF_SET(__pyx_t_13, function);
+                  __Pyx_DECREF_SET(__pyx_t_15, function);
                 }
               }
-              __pyx_t_1 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_13, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_13);
-              __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-              if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 240, __pyx_L21_error)
-              __Pyx_GOTREF(__pyx_t_1);
-              __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-              __pyx_t_13 = __pyx_t_1;
-              __pyx_t_1 = 0;
+              __pyx_t_4 = (__pyx_t_1) ? __Pyx_PyObject_CallOneArg(__pyx_t_15, __pyx_t_1) : __Pyx_PyObject_CallNoArg(__pyx_t_15);
+              __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+              if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 244, __pyx_L21_error)
+              __Pyx_GOTREF(__pyx_t_4);
+              __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
+              __pyx_t_15 = __pyx_t_4;
+              __pyx_t_4 = 0;
               __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
               /*try:*/ {
                 {
                   __Pyx_PyThreadState_declare
                   __Pyx_PyThreadState_assign
-                  __Pyx_ExceptionSave(&__pyx_t_15, &__pyx_t_16, &__pyx_t_17);
-                  __Pyx_XGOTREF(__pyx_t_15);
-                  __Pyx_XGOTREF(__pyx_t_16);
+                  __Pyx_ExceptionSave(&__pyx_t_17, &__pyx_t_18, &__pyx_t_19);
                   __Pyx_XGOTREF(__pyx_t_17);
+                  __Pyx_XGOTREF(__pyx_t_18);
+                  __Pyx_XGOTREF(__pyx_t_19);
                   /*try:*/ {
-                    __pyx_v__py_file = __pyx_t_13;
-                    __pyx_t_13 = 0;
+                    __pyx_v__py_file = __pyx_t_15;
+                    __pyx_t_15 = 0;
 
-                    /* "renqualizer.pyx":242
+                    /* "renqualizer.pyx":246
  *                 with file_func(_arg) as _py_file:
  * 
  *                     _c_file = RWopsFromPython(_py_file)             # <<<<<<<<<<<<<<
@@ -4864,7 +4904,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
  */
                     __pyx_v__c_file = RWopsFromPython(__pyx_v__py_file);
 
-                    /* "renqualizer.pyx":243
+                    /* "renqualizer.pyx":247
  * 
  *                     _c_file = RWopsFromPython(_py_file)
  *                     if not _c_file:             # <<<<<<<<<<<<<<
@@ -4874,35 +4914,35 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
                     __pyx_t_9 = ((!(__pyx_v__c_file != 0)) != 0);
                     if (unlikely(__pyx_t_9)) {
 
-                      /* "renqualizer.pyx":244
+                      /* "renqualizer.pyx":248
  *                     _c_file = RWopsFromPython(_py_file)
  *                     if not _c_file:
  *                         raise self.__get_exception("read data")             # <<<<<<<<<<<<<<
  *                     error_code = setFile(_c_file)
  *                     _c_file.close(_c_file)
  */
-                      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__get_exception); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 244, __pyx_L25_error)
+                      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__get_exception); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 248, __pyx_L25_error)
                       __Pyx_GOTREF(__pyx_t_2);
-                      __pyx_t_1 = NULL;
+                      __pyx_t_4 = NULL;
                       if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
-                        __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_2);
-                        if (likely(__pyx_t_1)) {
+                        __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_2);
+                        if (likely(__pyx_t_4)) {
                           PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-                          __Pyx_INCREF(__pyx_t_1);
+                          __Pyx_INCREF(__pyx_t_4);
                           __Pyx_INCREF(function);
                           __Pyx_DECREF_SET(__pyx_t_2, function);
                         }
                       }
-                      __pyx_t_13 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_1, __pyx_kp_s_read_data) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_kp_s_read_data);
-                      __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-                      if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 244, __pyx_L25_error)
-                      __Pyx_GOTREF(__pyx_t_13);
+                      __pyx_t_15 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_4, __pyx_kp_s_read_data) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_kp_s_read_data);
+                      __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+                      if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 248, __pyx_L25_error)
+                      __Pyx_GOTREF(__pyx_t_15);
                       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-                      __Pyx_Raise(__pyx_t_13, 0, 0, 0);
-                      __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-                      __PYX_ERR(0, 244, __pyx_L25_error)
+                      __Pyx_Raise(__pyx_t_15, 0, 0, 0);
+                      __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
+                      __PYX_ERR(0, 248, __pyx_L25_error)
 
-                      /* "renqualizer.pyx":243
+                      /* "renqualizer.pyx":247
  * 
  *                     _c_file = RWopsFromPython(_py_file)
  *                     if not _c_file:             # <<<<<<<<<<<<<<
@@ -4911,7 +4951,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
  */
                     }
 
-                    /* "renqualizer.pyx":245
+                    /* "renqualizer.pyx":249
  *                     if not _c_file:
  *                         raise self.__get_exception("read data")
  *                     error_code = setFile(_c_file)             # <<<<<<<<<<<<<<
@@ -4920,7 +4960,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
  */
                     __pyx_v_error_code = setFile(__pyx_v__c_file);
 
-                    /* "renqualizer.pyx":246
+                    /* "renqualizer.pyx":250
  *                         raise self.__get_exception("read data")
  *                     error_code = setFile(_c_file)
  *                     _c_file.close(_c_file)             # <<<<<<<<<<<<<<
@@ -4929,7 +4969,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
  */
                     (void)(__pyx_v__c_file->close(__pyx_v__c_file));
 
-                    /* "renqualizer.pyx":240
+                    /* "renqualizer.pyx":244
  *                     _arg = renpy_path
  * 
  *                 with file_func(_arg) as _py_file:             # <<<<<<<<<<<<<<
@@ -4937,68 +4977,68 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
  *                     _c_file = RWopsFromPython(_py_file)
  */
                   }
-                  __Pyx_XDECREF(__pyx_t_15); __pyx_t_15 = 0;
-                  __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
                   __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
+                  __Pyx_XDECREF(__pyx_t_18); __pyx_t_18 = 0;
+                  __Pyx_XDECREF(__pyx_t_19); __pyx_t_19 = 0;
                   goto __pyx_L30_try_end;
                   __pyx_L25_error:;
                   __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-                  __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
+                  __Pyx_XDECREF(__pyx_t_15); __pyx_t_15 = 0;
                   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
                   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
                   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
                   /*except:*/ {
                     __Pyx_AddTraceback("renqualizer.BassDataHandler._get_data", __pyx_clineno, __pyx_lineno, __pyx_filename);
-                    if (__Pyx_GetException(&__pyx_t_13, &__pyx_t_2, &__pyx_t_1) < 0) __PYX_ERR(0, 240, __pyx_L27_except_error)
-                    __Pyx_GOTREF(__pyx_t_13);
+                    if (__Pyx_GetException(&__pyx_t_15, &__pyx_t_2, &__pyx_t_4) < 0) __PYX_ERR(0, 244, __pyx_L27_except_error)
+                    __Pyx_GOTREF(__pyx_t_15);
                     __Pyx_GOTREF(__pyx_t_2);
-                    __Pyx_GOTREF(__pyx_t_1);
-                    __pyx_t_4 = PyTuple_Pack(3, __pyx_t_13, __pyx_t_2, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 240, __pyx_L27_except_error)
                     __Pyx_GOTREF(__pyx_t_4);
-                    __pyx_t_18 = __Pyx_PyObject_Call(__pyx_t_14, __pyx_t_4, NULL);
-                    __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-                    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-                    if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 240, __pyx_L27_except_error)
-                    __Pyx_GOTREF(__pyx_t_18);
-                    __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_18);
-                    __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
-                    if (__pyx_t_9 < 0) __PYX_ERR(0, 240, __pyx_L27_except_error)
+                    __pyx_t_1 = PyTuple_Pack(3, __pyx_t_15, __pyx_t_2, __pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 244, __pyx_L27_except_error)
+                    __Pyx_GOTREF(__pyx_t_1);
+                    __pyx_t_20 = __Pyx_PyObject_Call(__pyx_t_16, __pyx_t_1, NULL);
+                    __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+                    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+                    if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 244, __pyx_L27_except_error)
+                    __Pyx_GOTREF(__pyx_t_20);
+                    __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_20);
+                    __Pyx_DECREF(__pyx_t_20); __pyx_t_20 = 0;
+                    if (__pyx_t_9 < 0) __PYX_ERR(0, 244, __pyx_L27_except_error)
                     __pyx_t_10 = ((!(__pyx_t_9 != 0)) != 0);
                     if (__pyx_t_10) {
-                      __Pyx_GIVEREF(__pyx_t_13);
+                      __Pyx_GIVEREF(__pyx_t_15);
                       __Pyx_GIVEREF(__pyx_t_2);
-                      __Pyx_XGIVEREF(__pyx_t_1);
-                      __Pyx_ErrRestoreWithState(__pyx_t_13, __pyx_t_2, __pyx_t_1);
-                      __pyx_t_13 = 0; __pyx_t_2 = 0; __pyx_t_1 = 0; 
-                      __PYX_ERR(0, 240, __pyx_L27_except_error)
+                      __Pyx_XGIVEREF(__pyx_t_4);
+                      __Pyx_ErrRestoreWithState(__pyx_t_15, __pyx_t_2, __pyx_t_4);
+                      __pyx_t_15 = 0; __pyx_t_2 = 0; __pyx_t_4 = 0; 
+                      __PYX_ERR(0, 244, __pyx_L27_except_error)
                     }
-                    __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
+                    __Pyx_XDECREF(__pyx_t_15); __pyx_t_15 = 0;
                     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-                    __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+                    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
                     goto __pyx_L26_exception_handled;
                   }
                   __pyx_L27_except_error:;
-                  __Pyx_XGIVEREF(__pyx_t_15);
-                  __Pyx_XGIVEREF(__pyx_t_16);
                   __Pyx_XGIVEREF(__pyx_t_17);
-                  __Pyx_ExceptionReset(__pyx_t_15, __pyx_t_16, __pyx_t_17);
+                  __Pyx_XGIVEREF(__pyx_t_18);
+                  __Pyx_XGIVEREF(__pyx_t_19);
+                  __Pyx_ExceptionReset(__pyx_t_17, __pyx_t_18, __pyx_t_19);
                   goto __pyx_L7_error;
                   __pyx_L26_exception_handled:;
-                  __Pyx_XGIVEREF(__pyx_t_15);
-                  __Pyx_XGIVEREF(__pyx_t_16);
                   __Pyx_XGIVEREF(__pyx_t_17);
-                  __Pyx_ExceptionReset(__pyx_t_15, __pyx_t_16, __pyx_t_17);
+                  __Pyx_XGIVEREF(__pyx_t_18);
+                  __Pyx_XGIVEREF(__pyx_t_19);
+                  __Pyx_ExceptionReset(__pyx_t_17, __pyx_t_18, __pyx_t_19);
                   __pyx_L30_try_end:;
                 }
               }
               /*finally:*/ {
                 /*normal exit:*/{
-                  if (__pyx_t_14) {
-                    __pyx_t_17 = __Pyx_PyObject_Call(__pyx_t_14, __pyx_tuple__7, NULL);
-                    __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-                    if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 240, __pyx_L7_error)
-                    __Pyx_GOTREF(__pyx_t_17);
-                    __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
+                  if (__pyx_t_16) {
+                    __pyx_t_19 = __Pyx_PyObject_Call(__pyx_t_16, __pyx_tuple__7, NULL);
+                    __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+                    if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 244, __pyx_L7_error)
+                    __Pyx_GOTREF(__pyx_t_19);
+                    __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
                   }
                   goto __pyx_L24;
                 }
@@ -5006,12 +5046,12 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
               }
               goto __pyx_L35;
               __pyx_L21_error:;
-              __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+              __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
               goto __pyx_L7_error;
               __pyx_L35:;
             }
 
-            /* "renqualizer.pyx":248
+            /* "renqualizer.pyx":252
  *                     _c_file.close(_c_file)
  * 
  *                 if error_code == (-2):             # <<<<<<<<<<<<<<
@@ -5021,35 +5061,35 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
             __pyx_t_10 = ((__pyx_v_error_code == -2L) != 0);
             if (unlikely(__pyx_t_10)) {
 
-              /* "renqualizer.pyx":249
+              /* "renqualizer.pyx":253
  * 
  *                 if error_code == (-2):
  *                     raise self.__get_exception(             # <<<<<<<<<<<<<<
  *                         "setting file (channel has not been initialized)"
  *                     )
  */
-              __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__get_exception); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 249, __pyx_L7_error)
+              __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__get_exception); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 253, __pyx_L7_error)
               __Pyx_GOTREF(__pyx_t_2);
-              __pyx_t_13 = NULL;
+              __pyx_t_15 = NULL;
               if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
-                __pyx_t_13 = PyMethod_GET_SELF(__pyx_t_2);
-                if (likely(__pyx_t_13)) {
+                __pyx_t_15 = PyMethod_GET_SELF(__pyx_t_2);
+                if (likely(__pyx_t_15)) {
                   PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-                  __Pyx_INCREF(__pyx_t_13);
+                  __Pyx_INCREF(__pyx_t_15);
                   __Pyx_INCREF(function);
                   __Pyx_DECREF_SET(__pyx_t_2, function);
                 }
               }
-              __pyx_t_1 = (__pyx_t_13) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_13, __pyx_kp_s_setting_file_channel_has_not_bee) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_kp_s_setting_file_channel_has_not_bee);
-              __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
-              if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 249, __pyx_L7_error)
-              __Pyx_GOTREF(__pyx_t_1);
+              __pyx_t_4 = (__pyx_t_15) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_15, __pyx_kp_s_setting_file_channel_has_not_bee) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_kp_s_setting_file_channel_has_not_bee);
+              __Pyx_XDECREF(__pyx_t_15); __pyx_t_15 = 0;
+              if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 253, __pyx_L7_error)
+              __Pyx_GOTREF(__pyx_t_4);
               __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-              __Pyx_Raise(__pyx_t_1, 0, 0, 0);
-              __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-              __PYX_ERR(0, 249, __pyx_L7_error)
+              __Pyx_Raise(__pyx_t_4, 0, 0, 0);
+              __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+              __PYX_ERR(0, 253, __pyx_L7_error)
 
-              /* "renqualizer.pyx":248
+              /* "renqualizer.pyx":252
  *                     _c_file.close(_c_file)
  * 
  *                 if error_code == (-2):             # <<<<<<<<<<<<<<
@@ -5058,7 +5098,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
  */
             }
 
-            /* "renqualizer.pyx":252
+            /* "renqualizer.pyx":256
  *                         "setting file (channel has not been initialized)"
  *                     )
  *                 elif error_code == (-4):             # <<<<<<<<<<<<<<
@@ -5068,43 +5108,43 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
             __pyx_t_10 = ((__pyx_v_error_code == -4L) != 0);
             if (unlikely(__pyx_t_10)) {
 
-              /* "renqualizer.pyx":253
+              /* "renqualizer.pyx":257
  *                     )
  *                 elif error_code == (-4):
  *                    raise self.__get_exception(             # <<<<<<<<<<<<<<
  *                        "allocating memory",
  *                        _exc_type=MemoryError
  */
-              __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__get_exception); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 253, __pyx_L7_error)
-              __Pyx_GOTREF(__pyx_t_1);
+              __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__get_exception); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 257, __pyx_L7_error)
+              __Pyx_GOTREF(__pyx_t_4);
 
-              /* "renqualizer.pyx":255
+              /* "renqualizer.pyx":259
  *                    raise self.__get_exception(
  *                        "allocating memory",
  *                        _exc_type=MemoryError             # <<<<<<<<<<<<<<
  *                    )
  *                 elif error_code:
  */
-              __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 255, __pyx_L7_error)
+              __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 259, __pyx_L7_error)
               __Pyx_GOTREF(__pyx_t_2);
-              if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_exc_type, __pyx_builtin_MemoryError) < 0) __PYX_ERR(0, 255, __pyx_L7_error)
+              if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_exc_type, __pyx_builtin_MemoryError) < 0) __PYX_ERR(0, 259, __pyx_L7_error)
 
-              /* "renqualizer.pyx":253
+              /* "renqualizer.pyx":257
  *                     )
  *                 elif error_code == (-4):
  *                    raise self.__get_exception(             # <<<<<<<<<<<<<<
  *                        "allocating memory",
  *                        _exc_type=MemoryError
  */
-              __pyx_t_13 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__8, __pyx_t_2); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 253, __pyx_L7_error)
-              __Pyx_GOTREF(__pyx_t_13);
-              __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+              __pyx_t_15 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_tuple__8, __pyx_t_2); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 257, __pyx_L7_error)
+              __Pyx_GOTREF(__pyx_t_15);
+              __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
               __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-              __Pyx_Raise(__pyx_t_13, 0, 0, 0);
-              __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-              __PYX_ERR(0, 253, __pyx_L7_error)
+              __Pyx_Raise(__pyx_t_15, 0, 0, 0);
+              __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
+              __PYX_ERR(0, 257, __pyx_L7_error)
 
-              /* "renqualizer.pyx":252
+              /* "renqualizer.pyx":256
  *                         "setting file (channel has not been initialized)"
  *                     )
  *                 elif error_code == (-4):             # <<<<<<<<<<<<<<
@@ -5113,7 +5153,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
  */
             }
 
-            /* "renqualizer.pyx":257
+            /* "renqualizer.pyx":261
  *                        _exc_type=MemoryError
  *                    )
  *                 elif error_code:             # <<<<<<<<<<<<<<
@@ -5123,24 +5163,24 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
             __pyx_t_10 = (__pyx_v_error_code != 0);
             if (unlikely(__pyx_t_10)) {
 
-              /* "renqualizer.pyx":259
+              /* "renqualizer.pyx":263
  *                 elif error_code:
  *                     # Another error.
  *                     raise self.__get_exception("setting file", error_code)             # <<<<<<<<<<<<<<
  * 
  *                 self.__current_file = renpy_path
  */
-              __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__get_exception); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 259, __pyx_L7_error)
+              __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__get_exception); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 263, __pyx_L7_error)
               __Pyx_GOTREF(__pyx_t_2);
-              __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_error_code); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 259, __pyx_L7_error)
-              __Pyx_GOTREF(__pyx_t_1);
-              __pyx_t_4 = NULL;
+              __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_error_code); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 263, __pyx_L7_error)
+              __Pyx_GOTREF(__pyx_t_4);
+              __pyx_t_1 = NULL;
               __pyx_t_11 = 0;
               if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
-                __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_2);
-                if (likely(__pyx_t_4)) {
+                __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_2);
+                if (likely(__pyx_t_1)) {
                   PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-                  __Pyx_INCREF(__pyx_t_4);
+                  __Pyx_INCREF(__pyx_t_1);
                   __Pyx_INCREF(function);
                   __Pyx_DECREF_SET(__pyx_t_2, function);
                   __pyx_t_11 = 1;
@@ -5148,44 +5188,44 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
               }
               #if CYTHON_FAST_PYCALL
               if (PyFunction_Check(__pyx_t_2)) {
-                PyObject *__pyx_temp[3] = {__pyx_t_4, __pyx_kp_s_setting_file, __pyx_t_1};
-                __pyx_t_13 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 259, __pyx_L7_error)
-                __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-                __Pyx_GOTREF(__pyx_t_13);
-                __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+                PyObject *__pyx_temp[3] = {__pyx_t_1, __pyx_kp_s_setting_file, __pyx_t_4};
+                __pyx_t_15 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 263, __pyx_L7_error)
+                __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+                __Pyx_GOTREF(__pyx_t_15);
+                __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
               } else
               #endif
               #if CYTHON_FAST_PYCCALL
               if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
-                PyObject *__pyx_temp[3] = {__pyx_t_4, __pyx_kp_s_setting_file, __pyx_t_1};
-                __pyx_t_13 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 259, __pyx_L7_error)
-                __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-                __Pyx_GOTREF(__pyx_t_13);
-                __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+                PyObject *__pyx_temp[3] = {__pyx_t_1, __pyx_kp_s_setting_file, __pyx_t_4};
+                __pyx_t_15 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 263, __pyx_L7_error)
+                __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+                __Pyx_GOTREF(__pyx_t_15);
+                __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
               } else
               #endif
               {
-                __pyx_t_5 = PyTuple_New(2+__pyx_t_11); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 259, __pyx_L7_error)
+                __pyx_t_5 = PyTuple_New(2+__pyx_t_11); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 263, __pyx_L7_error)
                 __Pyx_GOTREF(__pyx_t_5);
-                if (__pyx_t_4) {
-                  __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_4); __pyx_t_4 = NULL;
+                if (__pyx_t_1) {
+                  __Pyx_GIVEREF(__pyx_t_1); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_1); __pyx_t_1 = NULL;
                 }
                 __Pyx_INCREF(__pyx_kp_s_setting_file);
                 __Pyx_GIVEREF(__pyx_kp_s_setting_file);
                 PyTuple_SET_ITEM(__pyx_t_5, 0+__pyx_t_11, __pyx_kp_s_setting_file);
-                __Pyx_GIVEREF(__pyx_t_1);
-                PyTuple_SET_ITEM(__pyx_t_5, 1+__pyx_t_11, __pyx_t_1);
-                __pyx_t_1 = 0;
-                __pyx_t_13 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_5, NULL); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 259, __pyx_L7_error)
-                __Pyx_GOTREF(__pyx_t_13);
+                __Pyx_GIVEREF(__pyx_t_4);
+                PyTuple_SET_ITEM(__pyx_t_5, 1+__pyx_t_11, __pyx_t_4);
+                __pyx_t_4 = 0;
+                __pyx_t_15 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_5, NULL); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 263, __pyx_L7_error)
+                __Pyx_GOTREF(__pyx_t_15);
                 __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
               }
               __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-              __Pyx_Raise(__pyx_t_13, 0, 0, 0);
-              __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-              __PYX_ERR(0, 259, __pyx_L7_error)
+              __Pyx_Raise(__pyx_t_15, 0, 0, 0);
+              __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
+              __PYX_ERR(0, 263, __pyx_L7_error)
 
-              /* "renqualizer.pyx":257
+              /* "renqualizer.pyx":261
  *                        _exc_type=MemoryError
  *                    )
  *                 elif error_code:             # <<<<<<<<<<<<<<
@@ -5194,16 +5234,16 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
  */
             }
 
-            /* "renqualizer.pyx":261
+            /* "renqualizer.pyx":265
  *                     raise self.__get_exception("setting file", error_code)
  * 
  *                 self.__current_file = renpy_path             # <<<<<<<<<<<<<<
  * 
  *             if (self.__last_time == pos_in_ms) and self.__last_data:
  */
-            if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__current_file, __pyx_v_renpy_path) < 0) __PYX_ERR(0, 261, __pyx_L7_error)
+            if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__current_file, __pyx_v_renpy_path) < 0) __PYX_ERR(0, 265, __pyx_L7_error)
 
-            /* "renqualizer.pyx":228
+            /* "renqualizer.pyx":232
  *                 renpy_path = path.normpath(renpy_path).replace(u'\\', u'/')
  * 
  *             if self.__current_file != renpy_path:             # <<<<<<<<<<<<<<
@@ -5212,36 +5252,36 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
  */
           }
 
-          /* "renqualizer.pyx":263
+          /* "renqualizer.pyx":267
  *                 self.__current_file = renpy_path
  * 
  *             if (self.__last_time == pos_in_ms) and self.__last_data:             # <<<<<<<<<<<<<<
  *                 return self.__last_data
  * 
  */
-          __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__last_time); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 263, __pyx_L7_error)
-          __Pyx_GOTREF(__pyx_t_13);
-          __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_pos_in_ms); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 263, __pyx_L7_error)
+          __pyx_t_15 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__last_time); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 267, __pyx_L7_error)
+          __Pyx_GOTREF(__pyx_t_15);
+          __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_pos_in_ms); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 267, __pyx_L7_error)
           __Pyx_GOTREF(__pyx_t_2);
-          __pyx_t_5 = PyObject_RichCompare(__pyx_t_13, __pyx_t_2, Py_EQ); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 263, __pyx_L7_error)
-          __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
+          __pyx_t_5 = PyObject_RichCompare(__pyx_t_15, __pyx_t_2, Py_EQ); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 267, __pyx_L7_error)
+          __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-          __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 263, __pyx_L7_error)
+          __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 267, __pyx_L7_error)
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
           if (__pyx_t_9) {
           } else {
             __pyx_t_10 = __pyx_t_9;
             goto __pyx_L38_bool_binop_done;
           }
-          __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__last_data); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 263, __pyx_L7_error)
+          __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__last_data); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 267, __pyx_L7_error)
           __Pyx_GOTREF(__pyx_t_5);
-          __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 263, __pyx_L7_error)
+          __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 267, __pyx_L7_error)
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
           __pyx_t_10 = __pyx_t_9;
           __pyx_L38_bool_binop_done:;
           if (__pyx_t_10) {
 
-            /* "renqualizer.pyx":264
+            /* "renqualizer.pyx":268
  * 
  *             if (self.__last_time == pos_in_ms) and self.__last_data:
  *                 return self.__last_data             # <<<<<<<<<<<<<<
@@ -5249,13 +5289,13 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
  *             error_code = updateBufferFromPos(pos_in_ms)
  */
             __Pyx_XDECREF(__pyx_r);
-            __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__last_data); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 264, __pyx_L7_error)
+            __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__last_data); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 268, __pyx_L7_error)
             __Pyx_GOTREF(__pyx_t_5);
             __pyx_r = __pyx_t_5;
             __pyx_t_5 = 0;
             goto __pyx_L11_try_return;
 
-            /* "renqualizer.pyx":263
+            /* "renqualizer.pyx":267
  *                 self.__current_file = renpy_path
  * 
  *             if (self.__last_time == pos_in_ms) and self.__last_data:             # <<<<<<<<<<<<<<
@@ -5264,7 +5304,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
  */
           }
 
-          /* "renqualizer.pyx":266
+          /* "renqualizer.pyx":270
  *                 return self.__last_data
  * 
  *             error_code = updateBufferFromPos(pos_in_ms)             # <<<<<<<<<<<<<<
@@ -5273,7 +5313,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
  */
           __pyx_v_error_code = updateBufferFromPos(__pyx_v_pos_in_ms);
 
-          /* "renqualizer.pyx":267
+          /* "renqualizer.pyx":271
  * 
  *             error_code = updateBufferFromPos(pos_in_ms)
  *             if error_code == (-2):             # <<<<<<<<<<<<<<
@@ -5283,35 +5323,35 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
           __pyx_t_10 = ((__pyx_v_error_code == -2L) != 0);
           if (unlikely(__pyx_t_10)) {
 
-            /* "renqualizer.pyx":268
+            /* "renqualizer.pyx":272
  *             error_code = updateBufferFromPos(pos_in_ms)
  *             if error_code == (-2):
  *                 raise self.__get_exception(             # <<<<<<<<<<<<<<
  *                     "updating buffer (channel has not been initialized)"
  *                 )
  */
-            __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__get_exception); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 268, __pyx_L7_error)
+            __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__get_exception); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 272, __pyx_L7_error)
             __Pyx_GOTREF(__pyx_t_2);
-            __pyx_t_13 = NULL;
+            __pyx_t_15 = NULL;
             if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
-              __pyx_t_13 = PyMethod_GET_SELF(__pyx_t_2);
-              if (likely(__pyx_t_13)) {
+              __pyx_t_15 = PyMethod_GET_SELF(__pyx_t_2);
+              if (likely(__pyx_t_15)) {
                 PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-                __Pyx_INCREF(__pyx_t_13);
+                __Pyx_INCREF(__pyx_t_15);
                 __Pyx_INCREF(function);
                 __Pyx_DECREF_SET(__pyx_t_2, function);
               }
             }
-            __pyx_t_5 = (__pyx_t_13) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_13, __pyx_kp_s_updating_buffer_channel_has_not) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_kp_s_updating_buffer_channel_has_not);
-            __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
-            if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 268, __pyx_L7_error)
+            __pyx_t_5 = (__pyx_t_15) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_15, __pyx_kp_s_updating_buffer_channel_has_not) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_kp_s_updating_buffer_channel_has_not);
+            __Pyx_XDECREF(__pyx_t_15); __pyx_t_15 = 0;
+            if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 272, __pyx_L7_error)
             __Pyx_GOTREF(__pyx_t_5);
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
             __Pyx_Raise(__pyx_t_5, 0, 0, 0);
             __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-            __PYX_ERR(0, 268, __pyx_L7_error)
+            __PYX_ERR(0, 272, __pyx_L7_error)
 
-            /* "renqualizer.pyx":267
+            /* "renqualizer.pyx":271
  * 
  *             error_code = updateBufferFromPos(pos_in_ms)
  *             if error_code == (-2):             # <<<<<<<<<<<<<<
@@ -5320,7 +5360,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
  */
           }
 
-          /* "renqualizer.pyx":271
+          /* "renqualizer.pyx":275
  *                     "updating buffer (channel has not been initialized)"
  *                 )
  *             elif error_code == (-4):             # <<<<<<<<<<<<<<
@@ -5330,43 +5370,43 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
           __pyx_t_10 = ((__pyx_v_error_code == -4L) != 0);
           if (unlikely(__pyx_t_10)) {
 
-            /* "renqualizer.pyx":272
+            /* "renqualizer.pyx":276
  *                 )
  *             elif error_code == (-4):
  *                 raise self.__get_exception(             # <<<<<<<<<<<<<<
  *                     "allocating memory",
  *                     _exc_type=MemoryError
  */
-            __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__get_exception); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 272, __pyx_L7_error)
+            __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__get_exception); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 276, __pyx_L7_error)
             __Pyx_GOTREF(__pyx_t_5);
 
-            /* "renqualizer.pyx":274
+            /* "renqualizer.pyx":278
  *                 raise self.__get_exception(
  *                     "allocating memory",
  *                     _exc_type=MemoryError             # <<<<<<<<<<<<<<
  *                 )
  *             elif error_code == 7:  # 'BASS_ERROR_POSITION'. File is end.
  */
-            __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 274, __pyx_L7_error)
+            __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 278, __pyx_L7_error)
             __Pyx_GOTREF(__pyx_t_2);
-            if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_exc_type, __pyx_builtin_MemoryError) < 0) __PYX_ERR(0, 274, __pyx_L7_error)
+            if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_exc_type, __pyx_builtin_MemoryError) < 0) __PYX_ERR(0, 278, __pyx_L7_error)
 
-            /* "renqualizer.pyx":272
+            /* "renqualizer.pyx":276
  *                 )
  *             elif error_code == (-4):
  *                 raise self.__get_exception(             # <<<<<<<<<<<<<<
  *                     "allocating memory",
  *                     _exc_type=MemoryError
  */
-            __pyx_t_13 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_tuple__8, __pyx_t_2); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 272, __pyx_L7_error)
-            __Pyx_GOTREF(__pyx_t_13);
+            __pyx_t_15 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_tuple__8, __pyx_t_2); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 276, __pyx_L7_error)
+            __Pyx_GOTREF(__pyx_t_15);
             __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __Pyx_Raise(__pyx_t_13, 0, 0, 0);
-            __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-            __PYX_ERR(0, 272, __pyx_L7_error)
+            __Pyx_Raise(__pyx_t_15, 0, 0, 0);
+            __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
+            __PYX_ERR(0, 276, __pyx_L7_error)
 
-            /* "renqualizer.pyx":271
+            /* "renqualizer.pyx":275
  *                     "updating buffer (channel has not been initialized)"
  *                 )
  *             elif error_code == (-4):             # <<<<<<<<<<<<<<
@@ -5375,7 +5415,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
  */
           }
 
-          /* "renqualizer.pyx":276
+          /* "renqualizer.pyx":280
  *                     _exc_type=MemoryError
  *                 )
  *             elif error_code == 7:  # 'BASS_ERROR_POSITION'. File is end.             # <<<<<<<<<<<<<<
@@ -5385,7 +5425,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
           __pyx_t_10 = ((__pyx_v_error_code == 7) != 0);
           if (__pyx_t_10) {
 
-            /* "renqualizer.pyx":277
+            /* "renqualizer.pyx":281
  *                 )
  *             elif error_code == 7:  # 'BASS_ERROR_POSITION'. File is end.
  *                 return None             # <<<<<<<<<<<<<<
@@ -5396,7 +5436,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
             __pyx_r = Py_None; __Pyx_INCREF(Py_None);
             goto __pyx_L11_try_return;
 
-            /* "renqualizer.pyx":276
+            /* "renqualizer.pyx":280
  *                     _exc_type=MemoryError
  *                 )
  *             elif error_code == 7:  # 'BASS_ERROR_POSITION'. File is end.             # <<<<<<<<<<<<<<
@@ -5405,7 +5445,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
  */
           }
 
-          /* "renqualizer.pyx":278
+          /* "renqualizer.pyx":282
  *             elif error_code == 7:  # 'BASS_ERROR_POSITION'. File is end.
  *                 return None
  *             elif error_code:             # <<<<<<<<<<<<<<
@@ -5415,24 +5455,24 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
           __pyx_t_10 = (__pyx_v_error_code != 0);
           if (unlikely(__pyx_t_10)) {
 
-            /* "renqualizer.pyx":280
+            /* "renqualizer.pyx":284
  *             elif error_code:
  *                 # Another error.
  *                 raise self.__get_exception("updating buffer", error_code)             # <<<<<<<<<<<<<<
  * 
  *             self.__last_data = tuple(self._get_octave_mapping(volume=volume))
  */
-            __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__get_exception); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 280, __pyx_L7_error)
+            __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__get_exception); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 284, __pyx_L7_error)
             __Pyx_GOTREF(__pyx_t_2);
-            __pyx_t_5 = __Pyx_PyInt_From_int(__pyx_v_error_code); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 280, __pyx_L7_error)
+            __pyx_t_5 = __Pyx_PyInt_From_int(__pyx_v_error_code); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 284, __pyx_L7_error)
             __Pyx_GOTREF(__pyx_t_5);
-            __pyx_t_1 = NULL;
+            __pyx_t_4 = NULL;
             __pyx_t_11 = 0;
             if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
-              __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_2);
-              if (likely(__pyx_t_1)) {
+              __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_2);
+              if (likely(__pyx_t_4)) {
                 PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-                __Pyx_INCREF(__pyx_t_1);
+                __Pyx_INCREF(__pyx_t_4);
                 __Pyx_INCREF(function);
                 __Pyx_DECREF_SET(__pyx_t_2, function);
                 __pyx_t_11 = 1;
@@ -5440,44 +5480,44 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
             }
             #if CYTHON_FAST_PYCALL
             if (PyFunction_Check(__pyx_t_2)) {
-              PyObject *__pyx_temp[3] = {__pyx_t_1, __pyx_kp_s_updating_buffer, __pyx_t_5};
-              __pyx_t_13 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 280, __pyx_L7_error)
-              __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-              __Pyx_GOTREF(__pyx_t_13);
+              PyObject *__pyx_temp[3] = {__pyx_t_4, __pyx_kp_s_updating_buffer, __pyx_t_5};
+              __pyx_t_15 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 284, __pyx_L7_error)
+              __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+              __Pyx_GOTREF(__pyx_t_15);
               __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
             } else
             #endif
             #if CYTHON_FAST_PYCCALL
             if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
-              PyObject *__pyx_temp[3] = {__pyx_t_1, __pyx_kp_s_updating_buffer, __pyx_t_5};
-              __pyx_t_13 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 280, __pyx_L7_error)
-              __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-              __Pyx_GOTREF(__pyx_t_13);
+              PyObject *__pyx_temp[3] = {__pyx_t_4, __pyx_kp_s_updating_buffer, __pyx_t_5};
+              __pyx_t_15 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 284, __pyx_L7_error)
+              __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+              __Pyx_GOTREF(__pyx_t_15);
               __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
             } else
             #endif
             {
-              __pyx_t_4 = PyTuple_New(2+__pyx_t_11); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 280, __pyx_L7_error)
-              __Pyx_GOTREF(__pyx_t_4);
-              if (__pyx_t_1) {
-                __Pyx_GIVEREF(__pyx_t_1); PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_1); __pyx_t_1 = NULL;
+              __pyx_t_1 = PyTuple_New(2+__pyx_t_11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 284, __pyx_L7_error)
+              __Pyx_GOTREF(__pyx_t_1);
+              if (__pyx_t_4) {
+                __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_4); __pyx_t_4 = NULL;
               }
               __Pyx_INCREF(__pyx_kp_s_updating_buffer);
               __Pyx_GIVEREF(__pyx_kp_s_updating_buffer);
-              PyTuple_SET_ITEM(__pyx_t_4, 0+__pyx_t_11, __pyx_kp_s_updating_buffer);
+              PyTuple_SET_ITEM(__pyx_t_1, 0+__pyx_t_11, __pyx_kp_s_updating_buffer);
               __Pyx_GIVEREF(__pyx_t_5);
-              PyTuple_SET_ITEM(__pyx_t_4, 1+__pyx_t_11, __pyx_t_5);
+              PyTuple_SET_ITEM(__pyx_t_1, 1+__pyx_t_11, __pyx_t_5);
               __pyx_t_5 = 0;
-              __pyx_t_13 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_4, NULL); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 280, __pyx_L7_error)
-              __Pyx_GOTREF(__pyx_t_13);
-              __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+              __pyx_t_15 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_1, NULL); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 284, __pyx_L7_error)
+              __Pyx_GOTREF(__pyx_t_15);
+              __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
             }
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __Pyx_Raise(__pyx_t_13, 0, 0, 0);
-            __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-            __PYX_ERR(0, 280, __pyx_L7_error)
+            __Pyx_Raise(__pyx_t_15, 0, 0, 0);
+            __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
+            __PYX_ERR(0, 284, __pyx_L7_error)
 
-            /* "renqualizer.pyx":278
+            /* "renqualizer.pyx":282
  *             elif error_code == 7:  # 'BASS_ERROR_POSITION'. File is end.
  *                 return None
  *             elif error_code:             # <<<<<<<<<<<<<<
@@ -5486,44 +5526,44 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
  */
           }
 
-          /* "renqualizer.pyx":282
+          /* "renqualizer.pyx":286
  *                 raise self.__get_exception("updating buffer", error_code)
  * 
  *             self.__last_data = tuple(self._get_octave_mapping(volume=volume))             # <<<<<<<<<<<<<<
  *             self.__last_time = pos_in_ms
  *             return self.__last_data
  */
-          __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_get_octave_mapping); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 282, __pyx_L7_error)
-          __Pyx_GOTREF(__pyx_t_13);
-          __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 282, __pyx_L7_error)
+          __pyx_t_15 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_get_octave_mapping); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 286, __pyx_L7_error)
+          __Pyx_GOTREF(__pyx_t_15);
+          __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 286, __pyx_L7_error)
           __Pyx_GOTREF(__pyx_t_2);
-          __pyx_t_4 = PyFloat_FromDouble(__pyx_v_volume); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 282, __pyx_L7_error)
-          __Pyx_GOTREF(__pyx_t_4);
-          if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_volume, __pyx_t_4) < 0) __PYX_ERR(0, 282, __pyx_L7_error)
-          __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-          __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_13, __pyx_empty_tuple, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 282, __pyx_L7_error)
-          __Pyx_GOTREF(__pyx_t_4);
-          __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
+          __pyx_t_1 = PyFloat_FromDouble(__pyx_v_volume); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 286, __pyx_L7_error)
+          __Pyx_GOTREF(__pyx_t_1);
+          if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_volume, __pyx_t_1) < 0) __PYX_ERR(0, 286, __pyx_L7_error)
+          __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+          __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_15, __pyx_empty_tuple, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 286, __pyx_L7_error)
+          __Pyx_GOTREF(__pyx_t_1);
+          __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-          __pyx_t_2 = __Pyx_PySequence_Tuple(__pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 282, __pyx_L7_error)
+          __pyx_t_2 = __Pyx_PySequence_Tuple(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 286, __pyx_L7_error)
           __Pyx_GOTREF(__pyx_t_2);
-          __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-          if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__last_data, __pyx_t_2) < 0) __PYX_ERR(0, 282, __pyx_L7_error)
+          __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+          if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__last_data, __pyx_t_2) < 0) __PYX_ERR(0, 286, __pyx_L7_error)
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-          /* "renqualizer.pyx":283
+          /* "renqualizer.pyx":287
  * 
  *             self.__last_data = tuple(self._get_octave_mapping(volume=volume))
  *             self.__last_time = pos_in_ms             # <<<<<<<<<<<<<<
  *             return self.__last_data
  * 
  */
-          __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_pos_in_ms); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 283, __pyx_L7_error)
+          __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_pos_in_ms); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 287, __pyx_L7_error)
           __Pyx_GOTREF(__pyx_t_2);
-          if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__last_time, __pyx_t_2) < 0) __PYX_ERR(0, 283, __pyx_L7_error)
+          if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__last_time, __pyx_t_2) < 0) __PYX_ERR(0, 287, __pyx_L7_error)
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-          /* "renqualizer.pyx":284
+          /* "renqualizer.pyx":288
  *             self.__last_data = tuple(self._get_octave_mapping(volume=volume))
  *             self.__last_time = pos_in_ms
  *             return self.__last_data             # <<<<<<<<<<<<<<
@@ -5531,13 +5571,13 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
  *     def _get_octave_mapping(self, volume=1., fill_zeros=False):
  */
           __Pyx_XDECREF(__pyx_r);
-          __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__last_data); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 284, __pyx_L7_error)
+          __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_BassDataHandler__last_data); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 288, __pyx_L7_error)
           __Pyx_GOTREF(__pyx_t_2);
           __pyx_r = __pyx_t_2;
           __pyx_t_2 = 0;
           goto __pyx_L11_try_return;
 
-          /* "renqualizer.pyx":198
+          /* "renqualizer.pyx":200
  *             SDL_RWops *_c_file
  * 
  *         with self.__audio_module.lock:             # <<<<<<<<<<<<<<
@@ -5547,38 +5587,38 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
         }
         __pyx_L7_error:;
         __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
+        __Pyx_XDECREF(__pyx_t_15); __pyx_t_15 = 0;
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         /*except:*/ {
           __Pyx_AddTraceback("renqualizer.BassDataHandler._get_data", __pyx_clineno, __pyx_lineno, __pyx_filename);
-          if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_4, &__pyx_t_13) < 0) __PYX_ERR(0, 198, __pyx_L9_except_error)
+          if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_1, &__pyx_t_15) < 0) __PYX_ERR(0, 200, __pyx_L9_except_error)
           __Pyx_GOTREF(__pyx_t_2);
-          __Pyx_GOTREF(__pyx_t_4);
-          __Pyx_GOTREF(__pyx_t_13);
-          __pyx_t_5 = PyTuple_Pack(3, __pyx_t_2, __pyx_t_4, __pyx_t_13); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 198, __pyx_L9_except_error)
+          __Pyx_GOTREF(__pyx_t_1);
+          __Pyx_GOTREF(__pyx_t_15);
+          __pyx_t_5 = PyTuple_Pack(3, __pyx_t_2, __pyx_t_1, __pyx_t_15); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 200, __pyx_L9_except_error)
           __Pyx_GOTREF(__pyx_t_5);
-          __pyx_t_14 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL);
+          __pyx_t_16 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-          if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 198, __pyx_L9_except_error)
-          __Pyx_GOTREF(__pyx_t_14);
-          __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_14);
-          __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-          if (__pyx_t_10 < 0) __PYX_ERR(0, 198, __pyx_L9_except_error)
+          if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 200, __pyx_L9_except_error)
+          __Pyx_GOTREF(__pyx_t_16);
+          __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_16);
+          __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+          if (__pyx_t_10 < 0) __PYX_ERR(0, 200, __pyx_L9_except_error)
           __pyx_t_9 = ((!(__pyx_t_10 != 0)) != 0);
           if (__pyx_t_9) {
             __Pyx_GIVEREF(__pyx_t_2);
-            __Pyx_GIVEREF(__pyx_t_4);
-            __Pyx_XGIVEREF(__pyx_t_13);
-            __Pyx_ErrRestoreWithState(__pyx_t_2, __pyx_t_4, __pyx_t_13);
-            __pyx_t_2 = 0; __pyx_t_4 = 0; __pyx_t_13 = 0; 
-            __PYX_ERR(0, 198, __pyx_L9_except_error)
+            __Pyx_GIVEREF(__pyx_t_1);
+            __Pyx_XGIVEREF(__pyx_t_15);
+            __Pyx_ErrRestoreWithState(__pyx_t_2, __pyx_t_1, __pyx_t_15);
+            __pyx_t_2 = 0; __pyx_t_1 = 0; __pyx_t_15 = 0; 
+            __PYX_ERR(0, 200, __pyx_L9_except_error)
           }
           __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-          __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-          __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
+          __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+          __Pyx_XDECREF(__pyx_t_15); __pyx_t_15 = 0;
           goto __pyx_L8_exception_handled;
         }
         __pyx_L9_except_error:;
@@ -5605,7 +5645,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
         if (__pyx_t_3) {
           __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_tuple__7, NULL);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-          if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 198, __pyx_L1_error)
+          if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 200, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_8);
           __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         }
@@ -5617,7 +5657,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
         if (__pyx_t_3) {
           __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_tuple__7, NULL);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-          if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 198, __pyx_L1_error)
+          if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 200, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_7);
           __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         }
@@ -5634,7 +5674,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
     __pyx_L44:;
   }
 
-  /* "renqualizer.pyx":184
+  /* "renqualizer.pyx":186
  *         return tuple(self._get_octave_mapping(fill_zeros=True))
  * 
  *     def _get_data(self, renpy_channel):             # <<<<<<<<<<<<<<
@@ -5650,7 +5690,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_XDECREF(__pyx_t_13);
+  __Pyx_XDECREF(__pyx_t_15);
   __Pyx_AddTraceback("renqualizer.BassDataHandler._get_data", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -5664,7 +5704,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_14_get_data(CYTHON_UNU
 }
 static PyObject *__pyx_gb_11renqualizer_15BassDataHandler_18generator(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
 
-/* "renqualizer.pyx":286
+/* "renqualizer.pyx":290
  *             return self.__last_data
  * 
  *     def _get_octave_mapping(self, volume=1., fill_zeros=False):             # <<<<<<<<<<<<<<
@@ -5720,7 +5760,7 @@ static PyObject *__pyx_pw_11renqualizer_15BassDataHandler_17_get_octave_mapping(
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "_get_octave_mapping") < 0)) __PYX_ERR(0, 286, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "_get_octave_mapping") < 0)) __PYX_ERR(0, 290, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -5739,7 +5779,7 @@ static PyObject *__pyx_pw_11renqualizer_15BassDataHandler_17_get_octave_mapping(
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("_get_octave_mapping", 0, 1, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 286, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("_get_octave_mapping", 0, 1, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 290, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("renqualizer.BassDataHandler._get_octave_mapping", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -5761,7 +5801,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_16_get_octave_mapping(
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_11renqualizer___pyx_scope_struct___get_octave_mapping *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 286, __pyx_L1_error)
+    __PYX_ERR(0, 290, __pyx_L1_error)
   } else {
     __Pyx_GOTREF(__pyx_cur_scope);
   }
@@ -5775,7 +5815,7 @@ static PyObject *__pyx_pf_11renqualizer_15BassDataHandler_16_get_octave_mapping(
   __Pyx_INCREF(__pyx_cur_scope->__pyx_v_fill_zeros);
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_fill_zeros);
   {
-    __pyx_CoroutineObject *gen = __Pyx_Generator_New((__pyx_coroutine_body_t) __pyx_gb_11renqualizer_15BassDataHandler_18generator, __pyx_codeobj__9, (PyObject *) __pyx_cur_scope, __pyx_n_s_get_octave_mapping, __pyx_n_s_BassDataHandler__get_octave_mapp, __pyx_n_s_renqualizer); if (unlikely(!gen)) __PYX_ERR(0, 286, __pyx_L1_error)
+    __pyx_CoroutineObject *gen = __Pyx_Generator_New((__pyx_coroutine_body_t) __pyx_gb_11renqualizer_15BassDataHandler_18generator, __pyx_codeobj__9, (PyObject *) __pyx_cur_scope, __pyx_n_s_get_octave_mapping, __pyx_n_s_BassDataHandler__get_octave_mapp, __pyx_n_s_renqualizer); if (unlikely(!gen)) __PYX_ERR(0, 290, __pyx_L1_error)
     __Pyx_DECREF(__pyx_cur_scope);
     __Pyx_RefNannyFinishContext();
     return (PyObject *) gen;
@@ -5811,9 +5851,9 @@ static PyObject *__pyx_gb_11renqualizer_15BassDataHandler_18generator(__pyx_Coro
     return NULL;
   }
   __pyx_L3_first_run:;
-  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 286, __pyx_L1_error)
+  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 290, __pyx_L1_error)
 
-  /* "renqualizer.pyx":296
+  /* "renqualizer.pyx":300
  *             double hz, value
  * 
  *         for i from (-45) <= i < 63:  # From C1 to B9 in semitones.             # <<<<<<<<<<<<<<
@@ -5822,17 +5862,17 @@ static PyObject *__pyx_gb_11renqualizer_15BassDataHandler_18generator(__pyx_Coro
  */
   for (__pyx_cur_scope->__pyx_v_i = -45; __pyx_cur_scope->__pyx_v_i < 63; __pyx_cur_scope->__pyx_v_i++) {
 
-    /* "renqualizer.pyx":298
+    /* "renqualizer.pyx":302
  *         for i from (-45) <= i < 63:  # From C1 to B9 in semitones.
  * 
  *             if fill_zeros:             # <<<<<<<<<<<<<<
  *                 yield .0
  *                 continue
  */
-    __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_fill_zeros); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 298, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_fill_zeros); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 302, __pyx_L1_error)
     if (__pyx_t_1) {
 
-      /* "renqualizer.pyx":299
+      /* "renqualizer.pyx":303
  * 
  *             if fill_zeros:
  *                 yield .0             # <<<<<<<<<<<<<<
@@ -5848,9 +5888,9 @@ static PyObject *__pyx_gb_11renqualizer_15BassDataHandler_18generator(__pyx_Coro
       __pyx_generator->resume_label = 1;
       return __pyx_r;
       __pyx_L7_resume_from_yield:;
-      if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 299, __pyx_L1_error)
+      if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 303, __pyx_L1_error)
 
-      /* "renqualizer.pyx":300
+      /* "renqualizer.pyx":304
  *             if fill_zeros:
  *                 yield .0
  *                 continue             # <<<<<<<<<<<<<<
@@ -5859,7 +5899,7 @@ static PyObject *__pyx_gb_11renqualizer_15BassDataHandler_18generator(__pyx_Coro
  */
       goto __pyx_L4_continue;
 
-      /* "renqualizer.pyx":298
+      /* "renqualizer.pyx":302
  *         for i from (-45) <= i < 63:  # From C1 to B9 in semitones.
  * 
  *             if fill_zeros:             # <<<<<<<<<<<<<<
@@ -5868,17 +5908,17 @@ static PyObject *__pyx_gb_11renqualizer_15BassDataHandler_18generator(__pyx_Coro
  */
     }
 
-    /* "renqualizer.pyx":302
+    /* "renqualizer.pyx":306
  *                 continue
  * 
  *             value = getInterpolatedPointInDB((<double> i), volume)             # <<<<<<<<<<<<<<
  *             if value == (-1.):
  *                 raise self.__get_exception("generated octaved mapping")
  */
-    __pyx_t_2 = __pyx_PyFloat_AsDouble(__pyx_cur_scope->__pyx_v_volume); if (unlikely((__pyx_t_2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 302, __pyx_L1_error)
+    __pyx_t_2 = __pyx_PyFloat_AsDouble(__pyx_cur_scope->__pyx_v_volume); if (unlikely((__pyx_t_2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 306, __pyx_L1_error)
     __pyx_cur_scope->__pyx_v_value = getInterpolatedPointInDB(((double)__pyx_cur_scope->__pyx_v_i), __pyx_t_2);
 
-    /* "renqualizer.pyx":303
+    /* "renqualizer.pyx":307
  * 
  *             value = getInterpolatedPointInDB((<double> i), volume)
  *             if value == (-1.):             # <<<<<<<<<<<<<<
@@ -5888,13 +5928,13 @@ static PyObject *__pyx_gb_11renqualizer_15BassDataHandler_18generator(__pyx_Coro
     __pyx_t_1 = ((__pyx_cur_scope->__pyx_v_value == -1.) != 0);
     if (unlikely(__pyx_t_1)) {
 
-      /* "renqualizer.pyx":304
+      /* "renqualizer.pyx":308
  *             value = getInterpolatedPointInDB((<double> i), volume)
  *             if value == (-1.):
  *                 raise self.__get_exception("generated octaved mapping")             # <<<<<<<<<<<<<<
  *             yield value
  */
-      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_BassDataHandler__get_exception); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 304, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_BassDataHandler__get_exception); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 308, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __pyx_t_5 = NULL;
       if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_4))) {
@@ -5908,14 +5948,14 @@ static PyObject *__pyx_gb_11renqualizer_15BassDataHandler_18generator(__pyx_Coro
       }
       __pyx_t_3 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_5, __pyx_kp_s_generated_octaved_mapping) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_kp_s_generated_octaved_mapping);
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 304, __pyx_L1_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 308, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_Raise(__pyx_t_3, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __PYX_ERR(0, 304, __pyx_L1_error)
+      __PYX_ERR(0, 308, __pyx_L1_error)
 
-      /* "renqualizer.pyx":303
+      /* "renqualizer.pyx":307
  * 
  *             value = getInterpolatedPointInDB((<double> i), volume)
  *             if value == (-1.):             # <<<<<<<<<<<<<<
@@ -5924,12 +5964,12 @@ static PyObject *__pyx_gb_11renqualizer_15BassDataHandler_18generator(__pyx_Coro
  */
     }
 
-    /* "renqualizer.pyx":305
+    /* "renqualizer.pyx":309
  *             if value == (-1.):
  *                 raise self.__get_exception("generated octaved mapping")
  *             yield value             # <<<<<<<<<<<<<<
  */
-    __pyx_t_3 = PyFloat_FromDouble(__pyx_cur_scope->__pyx_v_value); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 305, __pyx_L1_error)
+    __pyx_t_3 = PyFloat_FromDouble(__pyx_cur_scope->__pyx_v_value); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 309, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_r = __pyx_t_3;
     __pyx_t_3 = 0;
@@ -5940,12 +5980,12 @@ static PyObject *__pyx_gb_11renqualizer_15BassDataHandler_18generator(__pyx_Coro
     __pyx_generator->resume_label = 2;
     return __pyx_r;
     __pyx_L9_resume_from_yield:;
-    if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 305, __pyx_L1_error)
+    if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 309, __pyx_L1_error)
     __pyx_L4_continue:;
   }
   CYTHON_MAYBE_UNUSED_VAR(__pyx_cur_scope);
 
-  /* "renqualizer.pyx":286
+  /* "renqualizer.pyx":290
  *             return self.__last_data
  * 
  *     def _get_octave_mapping(self, volume=1., fill_zeros=False):             # <<<<<<<<<<<<<<
@@ -6149,6 +6189,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_Color, __pyx_k_Color, sizeof(__pyx_k_Color), 0, 0, 1, 1},
   {&__pyx_kp_s_Error_code_is_0, __pyx_k_Error_code_is_0, sizeof(__pyx_k_Error_code_is_0), 0, 0, 1, 0},
   {&__pyx_n_s_ExceptionType, __pyx_k_ExceptionType, sizeof(__pyx_k_ExceptionType), 0, 0, 1, 1},
+  {&__pyx_n_s_FIX_POS_OFFSET_MS, __pyx_k_FIX_POS_OFFSET_MS, sizeof(__pyx_k_FIX_POS_OFFSET_MS), 0, 0, 1, 1},
   {&__pyx_n_s_ImportError, __pyx_k_ImportError, sizeof(__pyx_k_ImportError), 0, 0, 1, 1},
   {&__pyx_n_s_MemoryError, __pyx_k_MemoryError, sizeof(__pyx_k_MemoryError), 0, 0, 1, 1},
   {&__pyx_n_s_SRCALPHA, __pyx_k_SRCALPHA, sizeof(__pyx_k_SRCALPHA), 0, 0, 1, 1},
@@ -6280,10 +6321,10 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
   __pyx_builtin_ImportError = __Pyx_GetBuiltinName(__pyx_n_s_ImportError); if (!__pyx_builtin_ImportError) __PYX_ERR(0, 15, __pyx_L1_error)
   __pyx_builtin_object = __Pyx_GetBuiltinName(__pyx_n_s_object); if (!__pyx_builtin_object) __PYX_ERR(0, 33, __pyx_L1_error)
-  __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_n_s_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(0, 70, __pyx_L1_error)
-  __pyx_builtin_enumerate = __Pyx_GetBuiltinName(__pyx_n_s_enumerate); if (!__pyx_builtin_enumerate) __PYX_ERR(0, 78, __pyx_L1_error)
-  __pyx_builtin_max = __Pyx_GetBuiltinName(__pyx_n_s_max); if (!__pyx_builtin_max) __PYX_ERR(0, 176, __pyx_L1_error)
-  __pyx_builtin_MemoryError = __Pyx_GetBuiltinName(__pyx_n_s_MemoryError); if (!__pyx_builtin_MemoryError) __PYX_ERR(0, 255, __pyx_L1_error)
+  __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_n_s_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(0, 72, __pyx_L1_error)
+  __pyx_builtin_enumerate = __Pyx_GetBuiltinName(__pyx_n_s_enumerate); if (!__pyx_builtin_enumerate) __PYX_ERR(0, 80, __pyx_L1_error)
+  __pyx_builtin_max = __Pyx_GetBuiltinName(__pyx_n_s_max); if (!__pyx_builtin_max) __PYX_ERR(0, 178, __pyx_L1_error)
+  __pyx_builtin_MemoryError = __Pyx_GetBuiltinName(__pyx_n_s_MemoryError); if (!__pyx_builtin_MemoryError) __PYX_ERR(0, 259, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -6293,47 +6334,47 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "renqualizer.pyx":68
+  /* "renqualizer.pyx":70
  * 
  *         if (width < 1) or (height < 1):
  *             raise self.__get_exception(             # <<<<<<<<<<<<<<
  *                 "drawing eq graph (incorrect size)",
  *                 _exc_type=ValueError
  */
-  __pyx_tuple_ = PyTuple_Pack(1, __pyx_kp_s_drawing_eq_graph_incorrect_size); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 68, __pyx_L1_error)
+  __pyx_tuple_ = PyTuple_Pack(1, __pyx_kp_s_drawing_eq_graph_incorrect_size); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 70, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
 
-  /* "renqualizer.pyx":226
+  /* "renqualizer.pyx":230
  *                     )
  *                 )
  *                 renpy_path = path.normpath(renpy_path).replace(u'\\', u'/')             # <<<<<<<<<<<<<<
  * 
  *             if self.__current_file != renpy_path:
  */
-  __pyx_tuple__6 = PyTuple_Pack(2, __pyx_kp_u__4, __pyx_kp_u__5); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 226, __pyx_L1_error)
+  __pyx_tuple__6 = PyTuple_Pack(2, __pyx_kp_u__4, __pyx_kp_u__5); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 230, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__6);
   __Pyx_GIVEREF(__pyx_tuple__6);
 
-  /* "renqualizer.pyx":240
+  /* "renqualizer.pyx":244
  *                     _arg = renpy_path
  * 
  *                 with file_func(_arg) as _py_file:             # <<<<<<<<<<<<<<
  * 
  *                     _c_file = RWopsFromPython(_py_file)
  */
-  __pyx_tuple__7 = PyTuple_Pack(3, Py_None, Py_None, Py_None); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 240, __pyx_L1_error)
+  __pyx_tuple__7 = PyTuple_Pack(3, Py_None, Py_None, Py_None); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 244, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__7);
   __Pyx_GIVEREF(__pyx_tuple__7);
 
-  /* "renqualizer.pyx":253
+  /* "renqualizer.pyx":257
  *                     )
  *                 elif error_code == (-4):
  *                    raise self.__get_exception(             # <<<<<<<<<<<<<<
  *                        "allocating memory",
  *                        _exc_type=MemoryError
  */
-  __pyx_tuple__8 = PyTuple_Pack(1, __pyx_kp_s_allocating_memory); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 253, __pyx_L1_error)
+  __pyx_tuple__8 = PyTuple_Pack(1, __pyx_kp_s_allocating_memory); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 257, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__8);
   __Pyx_GIVEREF(__pyx_tuple__8);
 
@@ -6359,120 +6400,120 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__11);
   __Pyx_GIVEREF(__pyx_tuple__11);
 
-  /* "renqualizer.pyx":37
- *     __author__ = "Vladya"
+  /* "renqualizer.pyx":39
+ *     FIX_POS_OFFSET_MS = (-110)
  * 
  *     def __init__(self, renpy_audio_module):             # <<<<<<<<<<<<<<
  * 
  *         """
  */
-  __pyx_tuple__12 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_renpy_audio_module); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 37, __pyx_L1_error)
+  __pyx_tuple__12 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_renpy_audio_module); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 39, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__12);
   __Pyx_GIVEREF(__pyx_tuple__12);
-  __pyx_codeobj__13 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_renqualizer_pyx, __pyx_n_s_init_2, 37, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__13)) __PYX_ERR(0, 37, __pyx_L1_error)
+  __pyx_codeobj__13 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_renqualizer_pyx, __pyx_n_s_init_2, 39, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__13)) __PYX_ERR(0, 39, __pyx_L1_error)
 
-  /* "renqualizer.pyx":54
+  /* "renqualizer.pyx":56
  *         self._init()
  * 
  *     def draw_equalizer(             # <<<<<<<<<<<<<<
  *         self,
  *         renpy_channel_or_data_tuple,
  */
-  __pyx_tuple__14 = PyTuple_Pack(34, __pyx_n_s_self, __pyx_n_s_renpy_channel_or_data_tuple, __pyx_n_s_width, __pyx_n_s_height, __pyx_n_s_line_color, __pyx_n_s_back_color, __pyx_n_s_i, __pyx_n_s_v, __pyx_n_s_white, __pyx_n_s_black, __pyx_n_s_data, __pyx_n_s_width_2, __pyx_n_s_height_2, __pyx_n_s_py_surface, __pyx_n_s_out_pysurface, __pyx_n_s_c_surface, __pyx_n_s_pixels, __pyx_n_s_out_csurface, __pyx_n_s_out_pixels, __pyx_n_s_elem_w, __pyx_n_s_elem_h, __pyx_n_s_x, __pyx_n_s_x_2, __pyx_n_s_y, __pyx_n_s_element_index, __pyx_n_s_x_offset, __pyx_n_s_draw_from_y, __pyx_n_s_value, __pyx_n_s_pixel_line, __pyx_n_s_current_color, __pyx_n_s_y_index_multipler, __pyx_n_s_x_index_multipler, __pyx_n_s_get_y, __pyx_n_s_get_x); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 54, __pyx_L1_error)
+  __pyx_tuple__14 = PyTuple_Pack(34, __pyx_n_s_self, __pyx_n_s_renpy_channel_or_data_tuple, __pyx_n_s_width, __pyx_n_s_height, __pyx_n_s_line_color, __pyx_n_s_back_color, __pyx_n_s_i, __pyx_n_s_v, __pyx_n_s_white, __pyx_n_s_black, __pyx_n_s_data, __pyx_n_s_width_2, __pyx_n_s_height_2, __pyx_n_s_py_surface, __pyx_n_s_out_pysurface, __pyx_n_s_c_surface, __pyx_n_s_pixels, __pyx_n_s_out_csurface, __pyx_n_s_out_pixels, __pyx_n_s_elem_w, __pyx_n_s_elem_h, __pyx_n_s_x, __pyx_n_s_x_2, __pyx_n_s_y, __pyx_n_s_element_index, __pyx_n_s_x_offset, __pyx_n_s_draw_from_y, __pyx_n_s_value, __pyx_n_s_pixel_line, __pyx_n_s_current_color, __pyx_n_s_y_index_multipler, __pyx_n_s_x_index_multipler, __pyx_n_s_get_y, __pyx_n_s_get_x); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__14);
   __Pyx_GIVEREF(__pyx_tuple__14);
-  __pyx_codeobj__15 = (PyObject*)__Pyx_PyCode_New(6, 0, 34, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_renqualizer_pyx, __pyx_n_s_draw_equalizer, 54, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__15)) __PYX_ERR(0, 54, __pyx_L1_error)
-  __pyx_tuple__16 = PyTuple_Pack(2, ((PyObject*)__pyx_kp_s_fff), ((PyObject*)__pyx_kp_s_0000)); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(0, 54, __pyx_L1_error)
+  __pyx_codeobj__15 = (PyObject*)__Pyx_PyCode_New(6, 0, 34, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_renqualizer_pyx, __pyx_n_s_draw_equalizer, 56, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__15)) __PYX_ERR(0, 56, __pyx_L1_error)
+  __pyx_tuple__16 = PyTuple_Pack(2, ((PyObject*)__pyx_kp_s_fff), ((PyObject*)__pyx_kp_s_0000)); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__16);
   __Pyx_GIVEREF(__pyx_tuple__16);
 
-  /* "renqualizer.pyx":146
+  /* "renqualizer.pyx":148
  * 
  *     @classmethod
  *     def __get_exception(cls, action=None, error_code=None, _exc_type=None):             # <<<<<<<<<<<<<<
  *         ExceptionType = Exception
  *         if hasattr(_exc_type, "__mro__"):
  */
-  __pyx_tuple__17 = PyTuple_Pack(6, __pyx_n_s_cls, __pyx_n_s_action, __pyx_n_s_error_code, __pyx_n_s_exc_type, __pyx_n_s_ExceptionType, __pyx_n_s_trace_text); if (unlikely(!__pyx_tuple__17)) __PYX_ERR(0, 146, __pyx_L1_error)
+  __pyx_tuple__17 = PyTuple_Pack(6, __pyx_n_s_cls, __pyx_n_s_action, __pyx_n_s_error_code, __pyx_n_s_exc_type, __pyx_n_s_ExceptionType, __pyx_n_s_trace_text); if (unlikely(!__pyx_tuple__17)) __PYX_ERR(0, 148, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__17);
   __Pyx_GIVEREF(__pyx_tuple__17);
-  __pyx_codeobj__18 = (PyObject*)__Pyx_PyCode_New(4, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__17, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_renqualizer_pyx, __pyx_n_s_get_exception, 146, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__18)) __PYX_ERR(0, 146, __pyx_L1_error)
-  __pyx_tuple__19 = PyTuple_Pack(3, ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None)); if (unlikely(!__pyx_tuple__19)) __PYX_ERR(0, 146, __pyx_L1_error)
+  __pyx_codeobj__18 = (PyObject*)__Pyx_PyCode_New(4, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__17, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_renqualizer_pyx, __pyx_n_s_get_exception, 148, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__18)) __PYX_ERR(0, 148, __pyx_L1_error)
+  __pyx_tuple__19 = PyTuple_Pack(3, ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None)); if (unlikely(!__pyx_tuple__19)) __PYX_ERR(0, 148, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__19);
   __Pyx_GIVEREF(__pyx_tuple__19);
 
-  /* "renqualizer.pyx":159
+  /* "renqualizer.pyx":161
  *         return ExceptionType(trace_text)
  * 
  *     def _init(self):             # <<<<<<<<<<<<<<
  *         cdef int error_code = init()
  *         if error_code == (-2):
  */
-  __pyx_tuple__20 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_error_code); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(0, 159, __pyx_L1_error)
+  __pyx_tuple__20 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_error_code); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(0, 161, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__20);
   __Pyx_GIVEREF(__pyx_tuple__20);
-  __pyx_codeobj__21 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__20, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_renqualizer_pyx, __pyx_n_s_init, 159, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__21)) __PYX_ERR(0, 159, __pyx_L1_error)
+  __pyx_codeobj__21 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__20, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_renqualizer_pyx, __pyx_n_s_init, 161, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__21)) __PYX_ERR(0, 161, __pyx_L1_error)
 
-  /* "renqualizer.pyx":167
+  /* "renqualizer.pyx":169
  *            raise self.__get_exception("initialize recording", error_code)
  * 
  *     def free_resources(self):             # <<<<<<<<<<<<<<
  *         cdef int error_code = freeStream()
  *         if error_code == (-2):
  */
-  __pyx_tuple__22 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_error_code); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(0, 167, __pyx_L1_error)
+  __pyx_tuple__22 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_error_code); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(0, 169, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__22);
   __Pyx_GIVEREF(__pyx_tuple__22);
-  __pyx_codeobj__23 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__22, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_renqualizer_pyx, __pyx_n_s_free_resources, 167, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__23)) __PYX_ERR(0, 167, __pyx_L1_error)
+  __pyx_codeobj__23 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__22, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_renqualizer_pyx, __pyx_n_s_free_resources, 169, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__23)) __PYX_ERR(0, 169, __pyx_L1_error)
 
-  /* "renqualizer.pyx":175
+  /* "renqualizer.pyx":177
  *            raise self.__get_exception("freeing resources", error_code)
  * 
  *     def get_volume(self, renpy_channel):             # <<<<<<<<<<<<<<
  *         return max(self.get_data(renpy_channel))
  * 
  */
-  __pyx_tuple__24 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_renpy_channel); if (unlikely(!__pyx_tuple__24)) __PYX_ERR(0, 175, __pyx_L1_error)
+  __pyx_tuple__24 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_renpy_channel); if (unlikely(!__pyx_tuple__24)) __PYX_ERR(0, 177, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__24);
   __Pyx_GIVEREF(__pyx_tuple__24);
-  __pyx_codeobj__25 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__24, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_renqualizer_pyx, __pyx_n_s_get_volume, 175, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__25)) __PYX_ERR(0, 175, __pyx_L1_error)
+  __pyx_codeobj__25 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__24, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_renqualizer_pyx, __pyx_n_s_get_volume, 177, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__25)) __PYX_ERR(0, 177, __pyx_L1_error)
 
-  /* "renqualizer.pyx":178
+  /* "renqualizer.pyx":180
  *         return max(self.get_data(renpy_channel))
  * 
  *     def get_data(self, renpy_channel):             # <<<<<<<<<<<<<<
  *         result = self._get_data(renpy_channel)
  *         if result:
  */
-  __pyx_tuple__26 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_renpy_channel, __pyx_n_s_result); if (unlikely(!__pyx_tuple__26)) __PYX_ERR(0, 178, __pyx_L1_error)
+  __pyx_tuple__26 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_renpy_channel, __pyx_n_s_result); if (unlikely(!__pyx_tuple__26)) __PYX_ERR(0, 180, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__26);
   __Pyx_GIVEREF(__pyx_tuple__26);
-  __pyx_codeobj__27 = (PyObject*)__Pyx_PyCode_New(2, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__26, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_renqualizer_pyx, __pyx_n_s_get_data, 178, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__27)) __PYX_ERR(0, 178, __pyx_L1_error)
+  __pyx_codeobj__27 = (PyObject*)__Pyx_PyCode_New(2, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__26, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_renqualizer_pyx, __pyx_n_s_get_data, 180, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__27)) __PYX_ERR(0, 180, __pyx_L1_error)
 
-  /* "renqualizer.pyx":184
+  /* "renqualizer.pyx":186
  *         return tuple(self._get_octave_mapping(fill_zeros=True))
  * 
  *     def _get_data(self, renpy_channel):             # <<<<<<<<<<<<<<
  * 
  *         """
  */
-  __pyx_tuple__28 = PyTuple_Pack(11, __pyx_n_s_self, __pyx_n_s_renpy_channel, __pyx_n_s_pos_in_ms, __pyx_n_s_error_code, __pyx_n_s_volume, __pyx_n_s_c_file, __pyx_n_s_renpy_path, __pyx_n_s_is_audiodata, __pyx_n_s_file_func, __pyx_n_s_arg, __pyx_n_s_py_file); if (unlikely(!__pyx_tuple__28)) __PYX_ERR(0, 184, __pyx_L1_error)
+  __pyx_tuple__28 = PyTuple_Pack(11, __pyx_n_s_self, __pyx_n_s_renpy_channel, __pyx_n_s_pos_in_ms, __pyx_n_s_error_code, __pyx_n_s_volume, __pyx_n_s_c_file, __pyx_n_s_renpy_path, __pyx_n_s_is_audiodata, __pyx_n_s_file_func, __pyx_n_s_arg, __pyx_n_s_py_file); if (unlikely(!__pyx_tuple__28)) __PYX_ERR(0, 186, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__28);
   __Pyx_GIVEREF(__pyx_tuple__28);
-  __pyx_codeobj__29 = (PyObject*)__Pyx_PyCode_New(2, 0, 11, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__28, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_renqualizer_pyx, __pyx_n_s_get_data_2, 184, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__29)) __PYX_ERR(0, 184, __pyx_L1_error)
+  __pyx_codeobj__29 = (PyObject*)__Pyx_PyCode_New(2, 0, 11, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__28, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_renqualizer_pyx, __pyx_n_s_get_data_2, 186, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__29)) __PYX_ERR(0, 186, __pyx_L1_error)
 
-  /* "renqualizer.pyx":286
+  /* "renqualizer.pyx":290
  *             return self.__last_data
  * 
  *     def _get_octave_mapping(self, volume=1., fill_zeros=False):             # <<<<<<<<<<<<<<
  * 
  *         """
  */
-  __pyx_tuple__30 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_volume, __pyx_n_s_fill_zeros, __pyx_n_s_i, __pyx_n_s_hz, __pyx_n_s_value); if (unlikely(!__pyx_tuple__30)) __PYX_ERR(0, 286, __pyx_L1_error)
+  __pyx_tuple__30 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_volume, __pyx_n_s_fill_zeros, __pyx_n_s_i, __pyx_n_s_hz, __pyx_n_s_value); if (unlikely(!__pyx_tuple__30)) __PYX_ERR(0, 290, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__30);
   __Pyx_GIVEREF(__pyx_tuple__30);
-  __pyx_codeobj__9 = (PyObject*)__Pyx_PyCode_New(3, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__30, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_renqualizer_pyx, __pyx_n_s_get_octave_mapping, 286, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__9)) __PYX_ERR(0, 286, __pyx_L1_error)
-  __pyx_tuple__31 = PyTuple_Pack(2, ((PyObject*)__pyx_float_1_), ((PyObject *)Py_False)); if (unlikely(!__pyx_tuple__31)) __PYX_ERR(0, 286, __pyx_L1_error)
+  __pyx_codeobj__9 = (PyObject*)__Pyx_PyCode_New(3, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__30, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_renqualizer_pyx, __pyx_n_s_get_octave_mapping, 290, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__9)) __PYX_ERR(0, 290, __pyx_L1_error)
+  __pyx_tuple__31 = PyTuple_Pack(2, ((PyObject*)__pyx_float_1_), ((PyObject *)Py_False)); if (unlikely(!__pyx_tuple__31)) __PYX_ERR(0, 290, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__31);
   __Pyx_GIVEREF(__pyx_tuple__31);
   __Pyx_RefNannyFinishContext();
@@ -6487,6 +6528,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitGlobals(void) {
   __pyx_float__0 = PyFloat_FromDouble(.0); if (unlikely(!__pyx_float__0)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_float_1_ = PyFloat_FromDouble(1.); if (unlikely(!__pyx_float_1_)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_1 = PyInt_FromLong(1); if (unlikely(!__pyx_int_1)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_neg_110 = PyInt_FromLong(-110); if (unlikely(!__pyx_int_neg_110)) __PYX_ERR(0, 1, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -6528,7 +6570,7 @@ static int __Pyx_modinit_type_init_code(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_modinit_type_init_code", 0);
   /*--- Type init code ---*/
-  if (PyType_Ready(&__pyx_type_11renqualizer___pyx_scope_struct___get_octave_mapping) < 0) __PYX_ERR(0, 286, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_11renqualizer___pyx_scope_struct___get_octave_mapping) < 0) __PYX_ERR(0, 290, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_11renqualizer___pyx_scope_struct___get_octave_mapping.tp_print = 0;
   #endif
@@ -6883,130 +6925,139 @@ if (!__Pyx_RefNanny) {
  * 
  *     __author__ = "Vladya"             # <<<<<<<<<<<<<<
  * 
- *     def __init__(self, renpy_audio_module):
+ *     FIX_POS_OFFSET_MS = (-110)
  */
   if (__Pyx_SetNameInClass(__pyx_t_1, __pyx_n_s_author, __pyx_n_s_Vladya) < 0) __PYX_ERR(0, 35, __pyx_L1_error)
 
   /* "renqualizer.pyx":37
  *     __author__ = "Vladya"
  * 
+ *     FIX_POS_OFFSET_MS = (-110)             # <<<<<<<<<<<<<<
+ * 
+ *     def __init__(self, renpy_audio_module):
+ */
+  if (__Pyx_SetNameInClass(__pyx_t_1, __pyx_n_s_FIX_POS_OFFSET_MS, __pyx_int_neg_110) < 0) __PYX_ERR(0, 37, __pyx_L1_error)
+
+  /* "renqualizer.pyx":39
+ *     FIX_POS_OFFSET_MS = (-110)
+ * 
  *     def __init__(self, renpy_audio_module):             # <<<<<<<<<<<<<<
  * 
  *         """
  */
-  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11renqualizer_15BassDataHandler_1__init__, 0, __pyx_n_s_BassDataHandler___init, NULL, __pyx_n_s_renqualizer, __pyx_d, ((PyObject *)__pyx_codeobj__13)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 37, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11renqualizer_15BassDataHandler_1__init__, 0, __pyx_n_s_BassDataHandler___init, NULL, __pyx_n_s_renqualizer, __pyx_d, ((PyObject *)__pyx_codeobj__13)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 39, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (__Pyx_SetNameInClass(__pyx_t_1, __pyx_n_s_init_2, __pyx_t_4) < 0) __PYX_ERR(0, 37, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_1, __pyx_n_s_init_2, __pyx_t_4) < 0) __PYX_ERR(0, 39, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "renqualizer.pyx":54
+  /* "renqualizer.pyx":56
  *         self._init()
  * 
  *     def draw_equalizer(             # <<<<<<<<<<<<<<
  *         self,
  *         renpy_channel_or_data_tuple,
  */
-  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11renqualizer_15BassDataHandler_3draw_equalizer, 0, __pyx_n_s_BassDataHandler_draw_equalizer, NULL, __pyx_n_s_renqualizer, __pyx_d, ((PyObject *)__pyx_codeobj__15)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 54, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11renqualizer_15BassDataHandler_3draw_equalizer, 0, __pyx_n_s_BassDataHandler_draw_equalizer, NULL, __pyx_n_s_renqualizer, __pyx_d, ((PyObject *)__pyx_codeobj__15)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_4, __pyx_tuple__16);
-  if (__Pyx_SetNameInClass(__pyx_t_1, __pyx_n_s_draw_equalizer, __pyx_t_4) < 0) __PYX_ERR(0, 54, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_1, __pyx_n_s_draw_equalizer, __pyx_t_4) < 0) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "renqualizer.pyx":146
+  /* "renqualizer.pyx":148
  * 
  *     @classmethod
  *     def __get_exception(cls, action=None, error_code=None, _exc_type=None):             # <<<<<<<<<<<<<<
  *         ExceptionType = Exception
  *         if hasattr(_exc_type, "__mro__"):
  */
-  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11renqualizer_15BassDataHandler_5__get_exception, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_BassDataHandler___get_exception, NULL, __pyx_n_s_renqualizer, __pyx_d, ((PyObject *)__pyx_codeobj__18)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 146, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11renqualizer_15BassDataHandler_5__get_exception, __Pyx_CYFUNCTION_CLASSMETHOD, __pyx_n_s_BassDataHandler___get_exception, NULL, __pyx_n_s_renqualizer, __pyx_d, ((PyObject *)__pyx_codeobj__18)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 148, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_4, __pyx_tuple__19);
 
-  /* "renqualizer.pyx":145
+  /* "renqualizer.pyx":147
  *         return out_pysurface
  * 
  *     @classmethod             # <<<<<<<<<<<<<<
  *     def __get_exception(cls, action=None, error_code=None, _exc_type=None):
  *         ExceptionType = Exception
  */
-  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 145, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Method_ClassMethod(__pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 147, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_1, __pyx_n_s_BassDataHandler__get_exception, __pyx_t_5) < 0) __PYX_ERR(0, 146, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_1, __pyx_n_s_BassDataHandler__get_exception, __pyx_t_5) < 0) __PYX_ERR(0, 148, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "renqualizer.pyx":159
+  /* "renqualizer.pyx":161
  *         return ExceptionType(trace_text)
  * 
  *     def _init(self):             # <<<<<<<<<<<<<<
  *         cdef int error_code = init()
  *         if error_code == (-2):
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11renqualizer_15BassDataHandler_7_init, 0, __pyx_n_s_BassDataHandler__init, NULL, __pyx_n_s_renqualizer, __pyx_d, ((PyObject *)__pyx_codeobj__21)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 159, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11renqualizer_15BassDataHandler_7_init, 0, __pyx_n_s_BassDataHandler__init, NULL, __pyx_n_s_renqualizer, __pyx_d, ((PyObject *)__pyx_codeobj__21)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 161, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (__Pyx_SetNameInClass(__pyx_t_1, __pyx_n_s_init, __pyx_t_5) < 0) __PYX_ERR(0, 159, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_1, __pyx_n_s_init, __pyx_t_5) < 0) __PYX_ERR(0, 161, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "renqualizer.pyx":167
+  /* "renqualizer.pyx":169
  *            raise self.__get_exception("initialize recording", error_code)
  * 
  *     def free_resources(self):             # <<<<<<<<<<<<<<
  *         cdef int error_code = freeStream()
  *         if error_code == (-2):
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11renqualizer_15BassDataHandler_9free_resources, 0, __pyx_n_s_BassDataHandler_free_resources, NULL, __pyx_n_s_renqualizer, __pyx_d, ((PyObject *)__pyx_codeobj__23)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 167, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11renqualizer_15BassDataHandler_9free_resources, 0, __pyx_n_s_BassDataHandler_free_resources, NULL, __pyx_n_s_renqualizer, __pyx_d, ((PyObject *)__pyx_codeobj__23)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 169, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (__Pyx_SetNameInClass(__pyx_t_1, __pyx_n_s_free_resources, __pyx_t_5) < 0) __PYX_ERR(0, 167, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_1, __pyx_n_s_free_resources, __pyx_t_5) < 0) __PYX_ERR(0, 169, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "renqualizer.pyx":175
+  /* "renqualizer.pyx":177
  *            raise self.__get_exception("freeing resources", error_code)
  * 
  *     def get_volume(self, renpy_channel):             # <<<<<<<<<<<<<<
  *         return max(self.get_data(renpy_channel))
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11renqualizer_15BassDataHandler_11get_volume, 0, __pyx_n_s_BassDataHandler_get_volume, NULL, __pyx_n_s_renqualizer, __pyx_d, ((PyObject *)__pyx_codeobj__25)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 175, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11renqualizer_15BassDataHandler_11get_volume, 0, __pyx_n_s_BassDataHandler_get_volume, NULL, __pyx_n_s_renqualizer, __pyx_d, ((PyObject *)__pyx_codeobj__25)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 177, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (__Pyx_SetNameInClass(__pyx_t_1, __pyx_n_s_get_volume, __pyx_t_5) < 0) __PYX_ERR(0, 175, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_1, __pyx_n_s_get_volume, __pyx_t_5) < 0) __PYX_ERR(0, 177, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "renqualizer.pyx":178
+  /* "renqualizer.pyx":180
  *         return max(self.get_data(renpy_channel))
  * 
  *     def get_data(self, renpy_channel):             # <<<<<<<<<<<<<<
  *         result = self._get_data(renpy_channel)
  *         if result:
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11renqualizer_15BassDataHandler_13get_data, 0, __pyx_n_s_BassDataHandler_get_data, NULL, __pyx_n_s_renqualizer, __pyx_d, ((PyObject *)__pyx_codeobj__27)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 178, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11renqualizer_15BassDataHandler_13get_data, 0, __pyx_n_s_BassDataHandler_get_data, NULL, __pyx_n_s_renqualizer, __pyx_d, ((PyObject *)__pyx_codeobj__27)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 180, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (__Pyx_SetNameInClass(__pyx_t_1, __pyx_n_s_get_data, __pyx_t_5) < 0) __PYX_ERR(0, 178, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_1, __pyx_n_s_get_data, __pyx_t_5) < 0) __PYX_ERR(0, 180, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "renqualizer.pyx":184
+  /* "renqualizer.pyx":186
  *         return tuple(self._get_octave_mapping(fill_zeros=True))
  * 
  *     def _get_data(self, renpy_channel):             # <<<<<<<<<<<<<<
  * 
  *         """
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11renqualizer_15BassDataHandler_15_get_data, 0, __pyx_n_s_BassDataHandler__get_data, NULL, __pyx_n_s_renqualizer, __pyx_d, ((PyObject *)__pyx_codeobj__29)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 184, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11renqualizer_15BassDataHandler_15_get_data, 0, __pyx_n_s_BassDataHandler__get_data, NULL, __pyx_n_s_renqualizer, __pyx_d, ((PyObject *)__pyx_codeobj__29)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 186, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (__Pyx_SetNameInClass(__pyx_t_1, __pyx_n_s_get_data_2, __pyx_t_5) < 0) __PYX_ERR(0, 184, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_1, __pyx_n_s_get_data_2, __pyx_t_5) < 0) __PYX_ERR(0, 186, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "renqualizer.pyx":286
+  /* "renqualizer.pyx":290
  *             return self.__last_data
  * 
  *     def _get_octave_mapping(self, volume=1., fill_zeros=False):             # <<<<<<<<<<<<<<
  * 
  *         """
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11renqualizer_15BassDataHandler_17_get_octave_mapping, 0, __pyx_n_s_BassDataHandler__get_octave_mapp, NULL, __pyx_n_s_renqualizer, __pyx_d, ((PyObject *)__pyx_codeobj__9)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 286, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_11renqualizer_15BassDataHandler_17_get_octave_mapping, 0, __pyx_n_s_BassDataHandler__get_octave_mapp, NULL, __pyx_n_s_renqualizer, __pyx_d, ((PyObject *)__pyx_codeobj__9)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 290, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_5, __pyx_tuple__31);
-  if (__Pyx_SetNameInClass(__pyx_t_1, __pyx_n_s_get_octave_mapping, __pyx_t_5) < 0) __PYX_ERR(0, 286, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_1, __pyx_n_s_get_octave_mapping, __pyx_t_5) < 0) __PYX_ERR(0, 290, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
   /* "renqualizer.pyx":33

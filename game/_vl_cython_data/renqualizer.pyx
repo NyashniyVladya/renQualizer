@@ -34,6 +34,8 @@ class BassDataHandler(object):
 
     __author__ = "Vladya"
 
+    FIX_POS_OFFSET_MS = (-110)
+
     def __init__(self, renpy_audio_module):
 
         """
@@ -207,6 +209,8 @@ class BassDataHandler(object):
             pos_in_ms = self.__renpysound.get_pos(renpy_channel.number)
             if pos_in_ms == (-1):
                 return None
+            pos_in_ms += self.FIX_POS_OFFSET_MS
+            pos_in_ms = max(0, pos_in_ms)
 
             volume = self.__renpysound.get_volume(renpy_channel.number)
 

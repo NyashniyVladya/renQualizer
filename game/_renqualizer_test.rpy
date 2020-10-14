@@ -30,6 +30,24 @@ init -10 python in _renqualizer_test:
             self.__last_surf = None
             self.__st = None
 
+        def __getstate__(self):
+
+            """
+            Реализация корректных сохранений.
+            Возвращает аргументы инициализации.
+            """
+
+            return {
+                "width": self.width,
+                "height": self.height,
+                "line_color": self._colors[0],
+                "back_color": self._colors[1],
+                "channel": self._channel.name
+            }
+
+        def __setstate__(self, init_kwargs_dict):
+            self.__init__(**init_kwargs_dict)
+
         def __eq__(self, other):
             if not self._equals(other):
                 return False
